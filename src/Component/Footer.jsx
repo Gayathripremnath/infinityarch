@@ -1,13 +1,14 @@
 import React from 'react';
 import './Footer.css';
-import logo from '../assets/logo.png'; // Path to your Infinity logo
+import { FaInstagram, FaLinkedinIn, FaXTwitter } from 'react-icons/fa6';
+
 
 const Footer = () => {
   return (
     <footer id="contact" className="footer-container">
       <div className="footer-top">
         <div className="footer-brand-side">
-          
+            <h2 className="footer-title">INFINITY</h2>
           <p>Building beyond conventional boundaries. Creating spatial artistry across the modern globe.</p>
         </div>
         <div className="footer-links-side">
@@ -22,7 +23,7 @@ const Footer = () => {
           <div className="link-column">
             <h4>Contact</h4>
             <ul>
-              <li>info@dnoin.inc</li>
+              <li>info@infinity.com</li>
               <li>+1 (555) 019-2834</li>
               <li>New York, NY</li>
             </ul>
@@ -32,9 +33,15 @@ const Footer = () => {
       <div className="footer-bottom">
         <p>&copy; 2026 Genova Technologies. All rights reserved.</p>
         <div className="footer-socials">
-          <span>Instagram</span>
-          <span>LinkedIn</span>
-          <span>Twitter</span>
+         <a href="https://instagram.com" target="_blank" rel="noreferrer" className="social-icon-btn" aria-label="Instagram">
+            <FaInstagram />
+          </a>
+          <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="social-icon-btn" aria-label="LinkedIn">
+            <FaLinkedinIn />
+          </a>
+          <a href="https://twitter.com" target="_blank" rel="noreferrer" className="social-icon-btn" aria-label="Twitter">
+            <FaXTwitter />
+          </a>
         </div>
       </div>
     </footer>
