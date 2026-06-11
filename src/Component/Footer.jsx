@@ -1,12 +1,13 @@
 import React from 'react';
 import './Footer.css';
+import logo from '../assets/logo.png'; // Path to your Infinity logo
 
 const Footer = () => {
   return (
     <footer id="contact" className="footer-container">
       <div className="footer-top">
         <div className="footer-brand-side">
-          <h2>DNOIN.INC</h2>
+          
           <p>Building beyond conventional boundaries. Creating spatial artistry across the modern globe.</p>
         </div>
         <div className="footer-links-side">
@@ -29,7 +30,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="footer-bottom">
-        <p>&copy; 2026 DNOIN.INC. All rights reserved.</p>
+        <p>&copy; 2026 Genova Technologies. All rights reserved.</p>
         <div className="footer-socials">
           <span>Instagram</span>
           <span>LinkedIn</span>

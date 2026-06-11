@@ -2,66 +2,92 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 80px;
-  background-color: #000000;
+  padding: 15px 40px;          /* Adjusted padding inside the navbar */
+  background-color: white ; /* Transparent background to show the underlying image */
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+  top: 20px;                    /* Small space from the top edge */
+  left: 50%;                    /* Move to the middle of the screen */
+  transform: translateX(-50%);  /* Shift back by half its width to center perfectly */
+  width: 92%;                   /* Reduces width to leave small spaces on left and right */
+  max-width: 1400px;            /* Prevents it from getting too wide on huge screens */
+  
+  border-radius: 50px;          /* Clean rounded corners for the outer container */
   box-sizing: border-box;
   z-index: 10;
 }
-
-.navbar-brand {
-  color: #ffffff;
-  font-weight: 800;
-  font-size: 1.4rem;
-  letter-spacing: 1px;
+.navbar-logo-wrapper {
+  display: flex;
+  align-items: center;
+  padding: 6px 14px;
+  border-radius: 8px;
 }
 
+.navbar-logo {
+  height: 44px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Updated center capsule featuring all 4 corners rounded */
 .navbar-menu-wrapper {
-  background-color: #ffffff;
-  padding: 2px 40px;
-  border-radius: 0 0 30px 30px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 12px 45px;
+  border-radius: 30px; /* Curves all 4 corners cleanly */
 }
 
 .navbar-links {
   list-style: none;
   display: flex;
-  gap: 30px;
+  gap: 35px;
   margin: 0;
-  padding: 10px 0;
+  padding: 0;
 }
 
 .navbar-links a {
   text-decoration: none;
-  color: #555555;
-  font-size: 0.9rem;
+  color: #000000; /* Dark text for perfect contrast on white background */
+  font-size: 0.95rem;
   font-weight: 500;
-  transition: color 0.3s;
+  transition: color 0.3s ease;
 }
 
+/* Active or hovered links turn to your requested theme Red */
 .navbar-links a:hover, 
 .navbar-links a.active {
-  color: #ff3333; /* Accent Red */
+  color: #ff3333; 
 }
 
+/* Right-hand side Action Pill */
 .btn-get-started {
-  background: #333333;
+  background: rgba(75, 71, 71, 0.564);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   color: #ffffff;
-  border: 1px solid #555555;
-  padding: 10px 24px;
-  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 6px 6px 6px 24px;
+  border-radius: 30px;
   cursor: pointer;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
+  font-weight: 500;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
   transition: all 0.3s ease;
 }
 
 .btn-get-started:hover {
-  background: #ff3333;
+  background: #ff3333; 
   border-color: #ff3333;
+  box-shadow: 0px 6px 15px rgba(255, 51, 51, 0.3);
+}
+
+.arrow-circle {
+  background: #ffffff;
+  color: #000000;
+  width: 39px !important;
+  height: 25px !important;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8rem;
 }
