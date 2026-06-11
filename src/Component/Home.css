@@ -407,3 +407,104 @@ body {
   height: 300px;
   object-fit: cover;
 }
+
+/* Media Queries for Home */
+@media (max-width: 1200px) {
+  .hero-title {
+    font-size: 3.5rem;
+  }
+  
+  .section-title-large {
+    font-size: 2.8rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .about-section {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 60px 40px;
+  }
+  
+  .projects-header {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .btn-view-all {
+    justify-self: start;
+  }
+  
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .table-row {
+    grid-template-columns: 200px 1fr;
+    gap: 15px;
+  }
+  
+  .col-link {
+    display: none;
+  }
+  
+  .table-row.active-row {
+    grid-template-columns: 80px 150px 1fr;
+  }
+  
+  .case-study-item {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-overlay {
+    grid-template-columns: 1fr;
+    padding: 120px 30px 40px 30px;
+  }
+  
+  .hero-top-text {
+    grid-column: 1;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .hero-right-text {
+    justify-self: start;
+    margin-top: 20px;
+  }
+  
+  .hero-carousel-dots {
+    grid-column: 1;
+  }
+  
+  .about-section, .projects-section, .architects-section, .case-studies-section {
+    padding: 40px 20px;
+  }
+  
+  .section-divider {
+    margin: 40px 20px;
+  }
+  
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .categories-overlay {
+    flex-direction: column;
+    padding: 40px 20px;
+    align-items: flex-start;
+    gap: 30px;
+  }
+  
+  .table-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .table-row.active-row {
+    grid-template-columns: 1fr;
+  }
+}

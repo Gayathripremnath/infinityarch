@@ -81,3 +81,32 @@
 .footer-socials span:hover {
   color: #ff3333;
 }
+
+/* Media Queries for Footer */
+@media (max-width: 992px) {
+  .footer-links-side {
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    padding: 50px 30px 20px 30px;
+  }
+  
+  .footer-top {
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .footer-links-side {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .footer-bottom {
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+  }
+}

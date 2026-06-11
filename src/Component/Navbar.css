@@ -91,3 +91,31 @@
   align-items: center;
   font-size: 0.8rem;
 }
+
+/* Media Queries for Navbar */
+@media (max-width: 992px) {
+  .navbar-links {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-container {
+    padding: 10px 15px;
+    width: 95%;
+  }
+  
+  .navbar-links {
+    display: none; /* Hide on mobile to simplify, normally a hamburger menu here */
+  }
+  
+  .btn-get-started {
+    padding: 4px 4px 4px 15px;
+    font-size: 0.75rem;
+  }
+  
+  .arrow-circle {
+    width: 30px !important;
+    height: 20px !important;
+  }
+}
