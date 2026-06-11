@@ -12,10 +12,10 @@ const Navbar = () => {
       {/* Floating capsule with 4 rounded corners */}
       <div className="navbar-menu-wrapper">
         <ul className="navbar-links">
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#about" className="active">About us</a></li>
-          <li><a href="#blog">Blog</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="/">Projects</a></li>
+          <li><a href="" className="active">About us</a></li>
+          <li><a href="">Blog</a></li>
+          <li><a href="">Contact</a></li>
         </ul>
       </div>
       
