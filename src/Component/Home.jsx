@@ -35,6 +35,7 @@ const BLOGS = [
 
 const Home = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [projectTrackerStyle, setProjectTrackerStyle] = useState({ width: '25%', left: '0%' });
   const projectSliderRef = useRef(null);
 
   // Auto transition hero headers
@@ -45,19 +46,54 @@ const Home = () => {
     return () => clearInterval(interval);
   }, []);
 
+  useEffect(() => {
+    const slider = projectSliderRef.current;
+    if (!slider) return;
+
+    const updateTracker = () => {
+      const maxScroll = slider.scrollWidth - slider.clientWidth;
+      if (maxScroll <= 0) {
+        setProjectTrackerStyle({ width: '100%', left: '0%' });
+        return;
+      }
+
+      const visibleRatio = slider.clientWidth / slider.scrollWidth;
+      const width = Math.max(12, visibleRatio * 100);
+      const left = (slider.scrollLeft / maxScroll) * (100 - width);
+
+      setProjectTrackerStyle({ width: `${width}%`, left: `${left}%` });
+    };
+
+    updateTracker();
+    slider.addEventListener('scroll', updateTracker);
+    window.addEventListener('resize', updateTracker);
+
+    const autoScroll = setInterval(() => scrollProjects('next'), 7000);
+
+    return () => {
+      slider.removeEventListener('scroll', updateTracker);
+      window.removeEventListener('resize', updateTracker);
+      clearInterval(autoScroll);
+    };
+  }, []);
+
   const handleNextHero = () => {
     setActiveIndex((prev) => (prev + 1) % CAROUSEL_DATA.length);
   };
 
  const scrollProjects = (direction) => {
-    const { current } = projectSliderRef;
-    if (current) {
-      const scrollAmount = 430; // Matches card width + gap spacing
-      current.scrollBy({
-        left: direction === 'prev' ? -scrollAmount : scrollAmount,
-        behavior: 'smooth'
-      });
-    }
+    const slider = projectSliderRef.current;
+    if (!slider) return;
+
+    const firstCard = slider.querySelector('.project-card');
+    const cardWidth = firstCard?.offsetWidth || slider.clientWidth;
+    const gap = 30;
+    const scrollAmount = cardWidth + gap;
+
+    slider.scrollBy({
+      left: direction === 'prev' ? -scrollAmount : scrollAmount,
+      behavior: 'smooth'
+    });
   };
 
   const nextIndex = (activeIndex + 1) % CAROUSEL_DATA.length;
@@ -210,7 +246,7 @@ const Home = () => {
   <div className="slider-nav-controls">
     <button className="ctrl-arrow prev" onClick={() => scrollProjects('prev')}>&#8249;</button>
     <div className="scroll-timeline-container">
-      <div className="scroll-timeline-line"></div>
+      <div className="scroll-timeline-line" style={projectTrackerStyle}></div>
     </div>
     <button className="ctrl-arrow next" onClick={() => scrollProjects('next')}>&#8250;</button>
   </div>

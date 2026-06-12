@@ -405,9 +405,11 @@
 /* Progress Line Container track */
 .scroll-timeline-container {
   flex-grow: 1;
-  height: 2px;
-  background-color: #ebebeb;
+  height: 3px;
+  background-color: #e6e6e6;
   position: relative;
+  border-radius: 999px;
+  overflow: hidden;
 }
 
 /* Dark Moving Bar Indicator */
@@ -416,9 +418,9 @@
   left: 0;
   top: 0;
   height: 100%;
-  width: 25%; /* Fixed width representation for default visual indicator state */
+  width: 20%;
   background-color: #111111;
-  transition: width 0.3s ease, left 0.3s ease;
+  transition: width 0.25s ease, left 0.25s ease;
 }
 
 /* ==========================================================================
