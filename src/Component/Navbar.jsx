@@ -55,9 +55,17 @@ const Navbar = () => {
       <div className={`side-drawer ${isMenuOpen ? 'open' : ''}`}>
         
         {/* Drawer Brand Header */}
-        <div className="drawer-logo">
-          <img src={logo} alt="infinity" className="drawer-logo-img" />
-         
+        <div className="drawer-header">
+          <div className="drawer-logo">
+            <img src={logo} alt="infinity" className="drawer-logo-img" />
+          </div>
+          <button
+            className="drawer-close"
+            onClick={() => setIsMenuOpen(false)}
+            aria-label="Close menu"
+          >
+            ×
+          </button>
         </div>
 
         {/* Sidebar Navigation Options */}

@@ -651,16 +651,16 @@
   }
 }
 /* --- NEW SECTION 5: FEATURES & ADVANTAGES RADAR --- */
-.features-diagram-section { padding: 100px 6px; background: #fff; text-align: center; }
-.features-heading-box h2 { font-size: 2.5rem; font-weight: 300; margin-bottom: 5px; color: #111; }
-.features-heading-box h3 { font-size: 2.5rem; font-weight: 400; color: #111; margin-top: 0; }
+.features-diagram-section { padding: 140px 6%; background: #fff; text-align: center; }
+.features-heading-box h2 { font-size: 3.4rem; font-weight: 300; margin-bottom: 12px; color: #111; }
+.features-heading-box h3 { font-size: 3rem; font-weight: 400; color: #111; margin-top: 0; letter-spacing: -0.03em; }
 .features-heading-box i { font-family: var(--font-serif); font-style: italic; }
 
-.diagram-layout-container { display: grid; grid-template-columns: 1fr 400px 1fr; align-items: center; margin-top: 80px; gap: 60px; }
-.feature-item-desc { margin-bottom: 60px; text-align: left; }
+.diagram-layout-container { display: grid; grid-template-columns: 1fr 420px 1fr; align-items: center; margin-top: 100px; gap: 80px; }
+.feature-item-desc { margin-bottom: 70px; text-align: left; }
 .feature-item-desc.align-right { text-align: right; }
-.feature-item-desc h4 { font-size: 1.25rem; font-weight: 600; margin-bottom: 10px; color: #111; }
-.feature-item-desc p { margin: 4px 0; color: #6b7280; font-size: 0.9rem; }
+.feature-item-desc h4 { font-size: 1.5rem; font-weight: 700; margin-bottom: 14px; color: #111; }
+.feature-item-desc p { margin: 6px 0; color: #6b7280; font-size: 1rem; line-height: 1.8; }
 
 .diagram-center-circle-wrapper { display: flex; justify-content: center; }
 .outer-radar-ring {
