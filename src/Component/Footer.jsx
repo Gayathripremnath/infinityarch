@@ -1,50 +1,68 @@
 import React from 'react';
 import './Footer.css';
-import { FaInstagram, FaLinkedinIn, FaXTwitter } from 'react-icons/fa6';
-
-
+import logo from '../assets/logo.png'; // Assuming you have a logo image in the assets folder
 const Footer = () => {
   return (
-    <footer id="contact" className="footer-container">
-      <div className="footer-top">
-        <div className="footer-brand-side">
-            <h2 className="footer-title">INFINITY</h2>
-          <p>Building beyond conventional boundaries. Creating spatial artistry across the modern globe.</p>
-        </div>
-        <div className="footer-links-side">
-          <div className="link-column">
-            <h4>Explore</h4>
-            <ul>
-              <li><a href="#projects">Projects</a></li>
-              <li><a href="#about">About Us</a></li>
-              <li><a href="#blog">Blog</a></li>
-            </ul>
-          </div>
-          <div className="link-column">
-            <h4>Contact</h4>
-            <ul>
-              <li>info@infinity.com</li>
-              <li>+1 (555) 019-2834</li>
-              <li>New York, NY</li>
-            </ul>
+      <footer className="global-footer-canvas">
+        <div className="footer-action-call-row">
+          <h2>Let's work <i>together</i></h2>
+          <div className="footer-action-cta-links">
+            <a href="#touch" className="footer-pill-btn accent">Get In Touch</a>
+            <a href="#careers" className="footer-pill-btn">Careers</a>
           </div>
         </div>
-      </div>
-      <div className="footer-bottom">
-        <p>&copy; 2026 Genova Technologies. All rights reserved.</p>
-        <div className="footer-socials">
-         <a href="https://instagram.com" target="_blank" rel="noreferrer" className="social-icon-btn" aria-label="Instagram">
-            <FaInstagram />
-          </a>
-          <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="social-icon-btn" aria-label="LinkedIn">
-            <FaLinkedinIn />
-          </a>
-          <a href="https://twitter.com" target="_blank" rel="noreferrer" className="social-icon-btn" aria-label="Twitter">
-            <FaXTwitter />
-          </a>
+
+        <div className="footer-structural-layout">
+          <div className="footer-brand-summary-box">
+            <div className="nav-logo inverse">
+              <img src={logo} alt="infinity" className="logo-img" />
+            </div>
+            <p>Compact Living Redefined: Smart and Stylish Portable House Layout Ideas.</p>
+            <div className="footer-social-links-row">
+              <a href="#f">f</a><a href="#x">𝕏</a><a href="#p">p</a><a href="#i">in</a>
+            </div>
+          </div>
+
+          <div className="footer-links-column-nav">
+            <h5>Top Links</h5>
+            <a href="#about">About Us</a>
+            <a href="#careers">Careers</a>
+            <a href="#partners">Partners</a>
+          </div>
+
+          <div className="footer-links-column-nav">
+            <h5>Resource</h5>
+            <a href="#news">News</a>
+            <a href="#posts">Posts</a>
+          </div>
+
+          <div className="footer-links-column-nav">
+            <h5>Phone</h5>
+            <span className="static-text-val">(025)555-36-18</span>
+          </div>
+
+          <div className="footer-links-column-nav">
+            <h5>Address</h5>
+            <span className="static-text-val">220 East Peterson D Charm NC 30217</span>
+          </div>
+
+          <div className="footer-embedded-wireframe-graphics">
+            <div className="get-in-touch-label-overlay">
+              <span>(Let's contact for better result)</span>
+              <h3>Get In Touch</h3>
+              <a href="mailto:hello@infinity.com">hello@infinity.com</a>
+            </div>
+            <div className="blueprint-isometric-wire-box">
+              {/* Perspective layout overlay placeholder mimicking wireframe drawing asset */}
+              <div className="isometric-mesh-line"></div>
+            </div>
+          </div>
         </div>
-      </div>
-    </footer>
+
+        <div className="footer-copyright-bottom-strip">
+          <p>© 1995-2025 All rights for <u>infinity</u> exclusive</p>
+        </div>
+      </footer>
   );
 };
 

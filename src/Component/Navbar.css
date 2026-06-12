@@ -1,193 +1,406 @@
-.navbar-container {
+/* ==========================================================================
+   YOUR ORIGINAL DESKTOP NAVBAR ARCHITECTURE (PRESERVED)
+   ========================================================================== */
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 40px;
-  background-color: #ffffff; 
-  position: absolute;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 92%;
-  max-width: 1400px;
-  border-radius: 50px;
+  padding: 30px 50px;
+  z-index: 10;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
   box-sizing: border-box;
-  z-index: 1000; /* Increased to ensure dropdown overlays structural page grids */
-  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.05);
 }
 
-.navbar-logo-wrapper {
+.nav-left {
   display: flex;
   align-items: center;
-  padding: 6px 14px;
-  border-radius: 8px;
+  gap: 40px;
 }
 
-.navbar-logo {
-  height: 44px;
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-img {
+  height: 40px;
   width: auto;
   object-fit: contain;
 }
 
-.navbar-menu-wrapper {
-  padding: 12px 45px;
-  border-radius: 30px;
+.logo-text {
+  display: flex;
+  flex-direction: column;
 }
 
-.navbar-links {
-  list-style: none;
+.brand-name {
+  font-family: var(--font-sans), sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  color: var(--text-light, #ffffff);
+}
+
+.brand-sub {
+  font-size: 0.7rem;
+  color: var(--primary-red, #ff2a2a);
+  letter-spacing: 3px;
+  font-weight: 500;
+}
+
+.menu-toggle {
+  background: none;
+  border: none;
+  color: var(--text-light, #ffffff);
   display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
+
+.menu-icon {
+  width: 18px;
+  height: 2px;
+  background-color: var(--primary-red, #ff2a2a);
+  position: relative;
+}
+
+.menu-icon::before, .menu-icon::after {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 2px;
+  background-color: var(--text-light, #ffffff);
+  left: 0;
+}
+
+.menu-icon::before { top: -5px; }
+.menu-icon::after { bottom: -5px; width: 15px; }
+
+.nav-links {
+  display: flex;
+  list-style: none;
   gap: 35px;
   margin: 0;
   padding: 0;
 }
 
-.navbar-links a {
+.nav-links a {
+  color: var(--text-light, #ffffff);
   text-decoration: none;
-  color: #000000;
   font-size: 0.95rem;
   font-weight: 500;
   transition: color 0.3s ease;
 }
 
-.navbar-links a:hover, 
-.navbar-links a.active {
-  color: #ff3333; 
-}
-
-.navbar-right-actions {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.btn-get-started {
-  background: rgba(75, 71, 71, 0.564);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  padding: 6px 6px 6px 24px;
-  border-radius: 30px;
-  cursor: pointer;
+.nav-links a span {
+  color: var(--primary-red, #ff2a2a);
   font-size: 0.8rem;
+  margin-left: 2px;
+}
+
+.nav-links a:hover {
+  color: var(--primary-red, #ff2a2a);
+}
+
+.nav-phone {
+  color: var(--text-light, #ffffff);
+  text-decoration: none;
   font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+}
+
+.nav-phone:hover {
+  color: var(--primary-red, #ff2a2a);
+}
+
+@media (max-width: 992px) {
+  .nav-center {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   NEW ADDITIONS: SIDEBAR DRAWER AND OVERLAY (FROM IMAGE_94BD42.PNG)
+   ========================================================================== */
+
+/* --- Dark Background Blur Layer --- */
+.drawer-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  z-index: 99;
+}
+
+.drawer-overlay.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* --- White Left-Hand Side Panel Container --- */
+.side-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 360px; /* Perfectly scaled proportions for sidebar layouts */
+  height: 100vh;
+  background-color: #ffffff; /* Clean white canvas background block */
+  box-sizing: border-box;
+  padding: 50px 40px;
   display: flex;
-  align-items: center;
-  gap: 15px;
-  transition: all 0.3s ease;
-}
-
-.btn-get-started:hover {
-  background: #ff3333; 
-  border-color: #ff3333;
-  box-shadow: 0px 6px 15px rgba(255, 51, 51, 0.3);
-}
-
-/* Made layout dimensions fully responsive to prevent distortions */
-.arrow-circle {
-  background: #ffffff;
-  color: #000000;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 0.8rem;
-}
-
-/* --- HAMBURGER MENU TOGGLE ICON BUTTON --- */
-.hamburger-toggle {
-  display: none; /* Hidden on desktop screens */
   flex-direction: column;
   justify-content: space-between;
-  width: 24px;
-  height: 18px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
+  
+  /* Sliding Animation Transitions */
+  transform: translateX(-100%);
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 100;
+  box-shadow: 15px 0 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Trigger reveal state when menu is true */
+.side-drawer.open {
+  transform: translateX(0);
+}
+
+/* --- Drawer Branding Layout Configuration --- */
+.drawer-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 60px;
+}
+
+.drawer-logo-img {
+  height: 38px;
+  width: auto;
+}
+
+.drawer-logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.drawer-brand-name {
+  color: #111111;
+  font-family: var(--font-sans), sans-serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: 2px;
+}
+
+.drawer-brand-sub {
+  color: #777777;
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+  font-weight: 500;
+}
+
+/* --- Vertical Link Stacks --- */
+.drawer-links {
+  list-style: none;
   padding: 0;
-  z-index: 1001;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  flex-grow: 1;
 }
 
-.hamburger-toggle .bar {
+.drawer-links a {
+  color: #111111;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   width: 100%;
-  height: 2px;
-  background-color: #000000;
-  transition: all 0.3s ease;
+  transition: color 0.2s ease;
+  font-family: var(--font-sans), sans-serif;
 }
 
-/* Smooth structural CSS transformation into an 'X' close graphic when open */
-.hamburger-toggle.toggle-active .bar:nth-child(1) {
-  transform: translateY(8px) rotate(45deg);
-}
-.hamburger-toggle.toggle-active .bar:nth-child(2) {
-  opacity: 0;
-}
-.hamburger-toggle.toggle-active .bar:nth-child(3) {
-  transform: translateY(-8px) rotate(-45deg);
+.drawer-links a:hover {
+  color: var(--primary-red, #ff2a2a);
 }
 
+/* Clean CSS pure arrow indicators styled perfectly on right side edges */
+.chevron {
+  width: 6px;
+  height: 6px;
+  border-right: 1.5px solid #888888;
+  border-bottom: 1.5px solid #888888;
+  transform: rotate(45deg);
+  display: inline-block;
+  margin-right: 2px;
+  transition: border-color 0.2s ease;
+}
 
-/* --- RESPONSIVE MEDIA QUERIES --- */
+.drawer-links a:hover .chevron {
+  border-color: var(--primary-red, #ff2a2a);
+}
+
+/* --- Bottom Drawer Context Footer --- */
+.drawer-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  margin-top: auto;
+}
+
+.drawer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.drawer-phone {
+  color: #111111;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: 0.5px;
+}
+
+.drawer-email {
+  color: #555555;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.drawer-email:hover {
+  color: var(--primary-red, #ff2a2a);
+}
+
+/* --- Social Icon Grid Array Layout --- */
+.drawer-socials {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.drawer-socials a {
+  color: #111111;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.drawer-socials a:hover {
+  color: var(--primary-red, #ff2a2a);
+  transform: translateY(-2px);
+}
+
+/* Quick override handling for narrow screens */
 @media (max-width: 992px) {
-  .navbar-links {
-    gap: 15px;
+  .nav-center {
+    display: none;
   }
 }
 
 @media (max-width: 768px) {
-  .navbar-container {
-    padding: 10px 20px;
-    width: 94%;
-    border-radius: 30px; /* Adjust wrapper curve slightly for mobile sizing */
+  .navbar {
+    padding: 18px 24px;
   }
 
-  /* HIDES THE "GET STARTED" BUTTON ON MOBILE SCREENS */
-  .btn-get-started {
-    display: none !important; 
-  }
-
-  .hamburger-toggle {
-    display: flex; /* Keeps the menu icon visible */
-  }
-
-  /* Converts menu drawer into a smooth absolute overlay drop container */
-  .navbar-menu-wrapper {
-    display: block;
-    position: absolute;
-    top: 75px; 
-    left: 0;
-    width: 100%;
-    background-color: #ffffff;
-    border-radius: 20px;
-    padding: 20px 0;
-    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.1);
-    transform: translateY(-20px);
-    opacity: 0;
-    pointer-events: none;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  /* Triggers toggle visibility dynamically via State classes */
-  .navbar-menu-wrapper.mobile-open {
-    transform: translateY(0);
-    opacity: 1;
-    pointer-events: auto;
-  }
-
-  .navbar-links {
-    flex-direction: column;
-    align-items: center;
+  .nav-left {
     gap: 20px;
-    width: 100%;
   }
 
-  .navbar-links a {
-    font-size: 1.1rem;
-    padding: 5px 0;
+  .logo-img {
+    height: 32px;
+  }
+
+  .brand-name {
+    font-size: 1rem;
+  }
+
+  .menu-toggle {
+    font-size: 0.8rem;
+    gap: 8px;
+  }
+
+  .nav-phone {
+    display: none;
+  }
+
+  .side-drawer {
     width: 100%;
-    text-align: center;
+    max-width: 320px;
+    padding: 32px 24px;
+  }
+
+  .drawer-logo {
+    margin-bottom: 40px;
+  }
+
+  .drawer-links {
+    gap: 22px;
+  }
+
+  .drawer-links a {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar {
+    padding: 14px 16px;
+  }
+
+  .logo-img {
+    height: 28px;
+  }
+
+  .brand-name {
+    font-size: 0.95rem;
+  }
+
+  .menu-icon,
+  .menu-icon::before,
+  .menu-icon::after {
+    width: 14px;
+  }
+
+  .menu-text {
+    font-size: 0.75rem;
+  }
+
+  .side-drawer {
+    padding: 24px 20px;
+  }
+
+  .drawer-footer {
+    gap: 12px;
+  }
+
+  .drawer-contact a,
+  .drawer-links a {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .side-drawer {
+    width: 100vw; /* Converts to a temporary clean full card width layout over mini devices */
   }
 }

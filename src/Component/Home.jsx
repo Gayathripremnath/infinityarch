@@ -1,169 +1,449 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './Home.css';
 
+// --- Assets Data ---
+const CAROUSEL_DATA = [
+  { id: 1, mainBg: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=80', title: 'portable living', italicTitle: 'made easy', cardImg: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1800&q=80', cardLabel: 'Architecture Meets Innovation' },
+  { id: 2, mainBg: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1800&q=80', title: 'minimalist design', italicTitle: 'redefined', cardImg: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=80', cardLabel: 'Future of Sustainable Living' },
+  { id: 3, mainBg: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1800&q=80', title: 'luxury scaling', italicTitle: 'anywhere', cardImg: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1800&q=80', cardLabel: 'Eco Luxury Modular Framework' },
+  { id: 4, mainBg: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1800&q=80', title: 'smart spatial', italicTitle: 'engineering', cardImg: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1800&q=80', cardLabel: 'Dynamic Off-Grid Structure' }
+];
+
+const PROJECTS = [
+  { id: 1, title: "Blending futuristic building", tag: "Architecture / 2025", img: "https://plus.unsplash.com/premium_photo-1731185355854-ab61c7698af0?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTN8fEJsZW5kaW5nJTIwZnV0dXJpc3RpYyUyMGJ1aWxkaW5nfGVufDB8fDB8fHww" },
+  { id: 2, title: "Modern Wood Pavilion", tag: "Design / 2024", img: "https://images.unsplash.com/photo-1647885352042-fe88980ccb2d?&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzV8fE1vZGVybiUyMFdvb2QlMjBQYXZpbGlvbnxlbnwwfHwwfHx8MA%3D%3D" },
+  { id: 3, title: "Eco-Friendly Retreat", tag: "Architecture / 2025", img: "https://images.unsplash.com/photo-1774597998353-2b8be5199a01?&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fEVjby1GcmllbmRseSUyMFJldHJlYXQlMjBob21lfGVufDB8fDB8fHww" },
+  { id: 4, title: "Minimalist Studio", tag: "Interior / 2024", img: "https://images.unsplash.com/photo-1607570799395-b968ad047e3f?&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzF8fE1pbmltYWxpc3QlMjBTdHVkaW98ZW58MHx8MHx8fDA%3D" },
+  { id: 5, title: "Urban Glass House", tag: "Architecture / 2026", img: "https://plus.unsplash.com/premium_photo-1686316979471-58ca82244594?&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8VXJiYW4lMjBHbGFzcyUyMEhvdXNlfGVufDB8fDB8fHww" },
+  { id: 6, title: "Scandinavian Villa", tag: "Residential / 2025", img: "https://images.unsplash.com/photo-1634147590662-4f140cfa572d?&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8U2NhbmRpbmF2aWFuJTIwVmlsbGF8ZW58MHx8MHx8fDA%3D" }
+];
+
+
+const TEAM_MEMBERS = [
+  { id: 1, name: 'Phoenix Blaze', role: 'Copywriter', img: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=500&q=80' },
+  { id: 2, name: 'Julian Vance', role: 'Lead Architect', img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=500&q=80' },
+  { id: 3, name: 'Amara Sterling', role: 'Interior Stylist', img: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=500&q=80' },
+  { id: 4, name: 'Silas Kincaid', role: 'Structural Engineer', img: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=500&q=80' },
+  { id: 5, name: 'Elena Rostova', role: 'Project Manager', img: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=500&q=80' }
+];
+
+const BLOGS = [
+  { id: 1, date: '12 December 2025', title: 'Inside Modern Architecture Balancing Aesthetic Portable house', img: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80', isLarge: true },
+  { id: 2, date: '10 November 2025', title: 'The Evolution of Off-Grid Living Structures', img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=400&q=80', isLarge: false },
+  { id: 3, date: '05 October 2025', title: 'Maximizing Minimalist Interior Environments', img: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=400&q=80', isLarge: false }
+];
+
 const Home = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const projectSliderRef = useRef(null);
+
+  // Auto transition hero headers
+  useEffect(() => {
+    const interval = setInterval(() => {
+      handleNextHero();
+    }, 6000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const handleNextHero = () => {
+    setActiveIndex((prev) => (prev + 1) % CAROUSEL_DATA.length);
+  };
+
+ const scrollProjects = (direction) => {
+    const { current } = projectSliderRef;
+    if (current) {
+      const scrollAmount = 430; // Matches card width + gap spacing
+      current.scrollBy({
+        left: direction === 'prev' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  const nextIndex = (activeIndex + 1) % CAROUSEL_DATA.length;
+
   return (
-    <div className="home-page">
-      {/* HERO SECTION */}
+    <div className="home-container">
+      
+      {/* SECTION 1: HERO CANVAS LANDING */}
       <section className="hero-section">
-        <div className="hero-overlay">
-          <div className="hero-top-text">
-            According to Vitruvius, the architect should strive to fulfill<br />
-            each of these three attributes as well as possible.
+        {CAROUSEL_DATA.map((slide, idx) => (
+          <div 
+            key={slide.id} 
+            className={`hero-bg-slide ${idx === activeIndex ? 'active' : ''}`}
+            style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.45)), url(${slide.mainBg})` }}
+          />
+        ))}
+
+
+        <div className="hero-content">
+          <div className="hero-left-indicator">
+            <span className="current-num">{String(activeIndex + 1).padStart(2, '0')}</span>
+            <div className="indicator-line"><span style={{ height: `${(activeIndex + 1) * 25}%` }}></span></div>
+            <span className="total-num">04</span>
           </div>
-          
-          <div className="hero-main-content">
-            <h1 className="hero-title">
-              INFINITY <br />
-              <span className="italic-title">Architecture</span>
+
+          <div className="hero-title-container">
+            <h1 className="hero-main-title">
+              {CAROUSEL_DATA[activeIndex].title}
+              <br />
+              <span className="serif-italic">{CAROUSEL_DATA[activeIndex].italicTitle}</span>
             </h1>
-            <button className="btn-pill-cta">
-              Contact us <span className="arrow-circle">➔</span>
-            </button>
           </div>
 
-          <div className="hero-right-text">
-            <h3>Architecture can mean</h3>
-            <p>A general term to describe buildings and other physical structures.</p>
+          <div className="social-fixed-bar">
+            <a href="#fb"><i className="fab fa-facebook-f"></i></a>
+            <a href="#ig"><i className="fab fa-instagram"></i></a>
+            <a href="#pin"><i className="fab fa-pinterest-p"></i></a>
+            <a href="#x"><i className="fab fa-x-twitter"></i></a>
+          </div>
+        </div>
+
+        <div className="hero-bottom-bar">
+          <div className="cta-button-group">
+            <button className="btn-order">Order Now</button>
+            <a href="mailto:hello@infinity.com" className="btn-email-link">hello@infinity.com</a>
           </div>
 
-          <div className="hero-carousel-dots">
-            <span></span>
-            <span className="active"></span>
-            <span></span>
-            <span></span>
+          <div className="scroll-indicator">
+            <span className="scroll-text">Scroll</span>
+            <div className="scroll-dash-track">
+              {CAROUSEL_DATA.map((_, idx) => (
+                <span key={idx} className={`dash ${idx === activeIndex ? 'active' : ''}`}></span>
+              ))}
+            </div>
+          </div>
+
+          <div className="mail-me-text">
+            <span>I have two – </span><a href="#mail">MAIL ME</a>
+          </div>
+
+          <div className="nested-preview-slider" onClick={handleNextHero}>
+            <div className="preview-image-wrapper">
+              <img 
+                src={CAROUSEL_DATA[nextIndex].cardImg} 
+                alt="Next Preview" 
+                key={activeIndex} 
+                className="animated-preview-img"
+              />
+              <div className="preview-meta">
+                <p>{CAROUSEL_DATA[nextIndex].cardLabel}</p>
+              </div>
+              <div className="preview-arrow-btn">
+                <span>&#8250;</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button className="global-next-circle-btn" onClick={handleNextHero}>
+          <span>&#8594;</span>
+        </button>
+      </section>
+
+      {/* SECTION 2: ABOUT */}
+      <section className="about-section">
+        <div className="about-grid">
+          <div className="about-visual-box">
+            <div className="dotted-bg-pattern"></div>
+            <div className="circular-frame-mask">
+              <img src="https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=1000&q=80" alt="Smart Structural Framing" />
+            </div>
+          </div>
+
+          <div className="about-text-content">
+            <span className="est-tag">est.1995</span>
+            <h2 className="section-title">About Our <i>Smart Portable Homes</i></h2>
+            <p className="description-p">
+              A portable house is a compact, movable living solution designed for flexibility, efficiency, and sustainability. These homes can be easily transported and set up in various locations, making them ideal for travelers, remote workers, or those seeking a minimalist lifestyle. Built with lightweight yet durable materials.
+            </p>
+
+            <div className="progress-metric-container">
+              <div className="metric-header">
+                <span className="metric-name">Architect Design</span>
+                <span className="metric-percentage">65%</span>
+              </div>
+              <div className="metric-track">
+                <div className="metric-fill" style={{ width: '65%' }}></div>
+              </div>
+            </div>
+
+            <div className="counter-row">
+              <div className="huge-number">45</div>
+              <div className="counter-label">
+                <span>Architecture Work</span>
+                <span>Completed</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ABOUT US SECTION */}
-      <section id="about" className="about-section">
-        <div className="section-marker"><span className="dot-red"></span> About Us</div>
-        <div className="about-content">
-          <h2>The art and science of designing buildings and nonbuilding structures. The style of design and method of construction of buildings and other physical structures.</h2>
-        </div>
-      </section>
+      {/* SECTION 3: PROJECTS CAROUSEL SLIDER */}
+<section className="projects-section">
+  <div className="section-header-row">
+    <h2 className="section-title">Our Best <i>Projects</i></h2>
+    <button className="btn-outline-view">ALL PROJECTS <span>&#8594;</span></button>
+  </div>
 
-      <hr className="section-divider" />
-
-      {/* RECENT PROJECTS SECTION */}
-      <section id="projects" className="projects-section">
-        <div className="projects-header">
-          <h2 className="section-title-large">
-            Recent <br />
-            <span className="italic-title">Projects</span>
-          </h2>
-          <p className="projects-subtext">
-            After completing your year 12 education and earning the necessary scores, you may apply for a bachelor's degree in architecture. To qualify, students can complete one of three entrance exams:
-          </p>
-          <button className="btn-view-all">
-            View All <span className="arrow-circle-black">➔</span>
-          </button>
-        </div>
-
-        <div className="projects-grid">
-          <div className="project-card">
-            <div className="project-img-wrapper curve-top-bottom">
-              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80" alt="Modern Versailles" />
-            </div>
-            <span className="project-location">• Alexander City, New York</span>
-            <h4>The modern Versailles</h4>
-          </div>
-
-          <div className="project-card">
-            <div className="project-img-wrapper curve-top-bottom">
-              <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=600&q=80" alt="Buckingham Palace" />
-            </div>
-            <span className="project-location">• Lake Havasu City, Washington</span>
-            <h4>Buckingham Palace</h4>
-          </div>
-
-          <div className="project-card">
-            <div className="project-img-wrapper curve-top-bottom">
-              <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=600&q=80" alt="Les Palais Bulles" />
-            </div>
-            <span className="project-location">• North Little Rock, California</span>
-            <h4>Les Palais Bulles</h4>
-          </div>
-        </div>
-      </section>
-
-      {/* ARCHITECTS ROSTER SECTION */}
-      <section className="architects-section">
-        <div className="section-marker"><span className="dot-red"></span> Our Architects</div>
-        <div className="architects-table">
-          <div className="table-row muted">
-            <div className="col-name">Max Abramovitz</div>
-            <div className="col-desc">• Hathor, relief on capitals at Philae Island, southern Egypt.</div>
-            <div className="col-link">View Profile</div>
-          </div>
+  <div className="project-slider-wrapper" ref={projectSliderRef}>
+    {PROJECTS.map((proj) => (
+      <div className="project-card" key={proj.id}>
+        <div className="project-img-container">
+          <img src={proj.img} alt={proj.title} className="project-main-img" />
           
-          <div className="table-row active-row">
-            <div className="row-avatar">
-              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" alt="Cameron" />
+          {/* Interactive video hover overlay block */}
+          <div className="project-hover-overlay">
+            <div className="hover-circle-btn">
+              <span className="hover-arrow">&#8594;</span>
             </div>
-            <div className="col-name"><strong>Cameron Williamson</strong></div>
-            <div className="col-desc">• Brighton, Brighton and Hove, United Kingdom</div>
-            <div className="col-link">View Profile</div>
+            <div className="hover-text-block">
+              <span className="project-tag">{proj.tag}</span>
+              <h3 className="project-card-title">{proj.title}</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <div className="slider-nav-controls">
+    <button className="ctrl-arrow prev" onClick={() => scrollProjects('prev')}>&#8249;</button>
+    <div className="scroll-timeline-container">
+      <div className="scroll-timeline-line"></div>
+    </div>
+    <button className="ctrl-arrow next" onClick={() => scrollProjects('next')}>&#8250;</button>
+  </div>
+</section>
+
+      {/* SECTION 4: SERVICES */}
+      <section className="services-section">
+        <div className="services-center-heading">
+          <h2 className="section-title">Our Best <i>Services</i></h2>
+        </div>
+
+        <div className="services-grid">
+          <div className="service-card">
+            <div className="service-icon">📐</div>
+            <h3>Custom Design & Planning</h3>
+            <div className="service-pill-group">
+              <span className="pill">Design</span>
+              <span className="pill">Planning</span>
+            </div>
           </div>
 
-          <div className="table-row muted">
-            <div className="col-name">Pietro Belluschi</div>
-            <div className="col-desc">• Cushion capital and early English Gothic foliated capital.</div>
-            <div className="col-link">View Profile</div>
+          <div className="service-card">
+            <div className="service-icon">⌂</div>
+            <h3>Modular Home Construction</h3>
+            <div className="service-pill-group">
+              <span className="pill">Design</span>
+              <span className="pill">Planning</span>
+            </div>
+          </div>
+
+          <div className="service-card">
+            <div className="service-icon">🚚</div>
+            <h3>On-Site Delivery & Installation</h3>
+            <div className="service-pill-group">
+              <span className="pill">Design</span>
+              <span className="pill">Planning</span>
+            </div>
+          </div>
+
+          <div className="service-card">
+            <div className="service-icon">☀️</div>
+            <h3>Solar Power System Installation</h3>
+            <div className="service-pill-group">
+              <span className="pill">Design</span>
+              <span className="pill">Planning</span>
+            </div>
+          </div>
+        </div>
+
+        <div className="services-footer-banner">
+          <p>Cut the waste. Get the service you deserve. View All <a href="#services">Our Service</a></p>
+        </div>
+      </section>
+
+      {/* NEW SECTION 5: FEATURES & ADVANTAGES CIRCLE DIAGRAM */}
+      <section className="features-diagram-section">
+        <div className="features-heading-box">
+          <h2>Over The Past 30 Years Of Our <i>Products</i></h2>
+          <h3><i>Features And Advantages</i></h3>
+        </div>
+
+        <div className="diagram-layout-container">
+          <div className="diagram-left-col">
+            <div className="feature-item-desc align-right">
+              <h4>Highly Customizable</h4>
+              <p>Advantage: Unique Designs</p>
+              <p>Benefit: Personal Expression</p>
+            </div>
+            <div className="feature-item-desc align-right">
+              <h4>Customizable Space</h4>
+              <p>Advantage: Position Moved</p>
+              <p>Benefit: Strong Flexibility</p>
+            </div>
+            <div className="feature-item-desc align-right">
+              <h4>Low Cost</h4>
+              <p>Advantage: Low Maintenance</p>
+              <p>Benefit: Lower Cost</p>
+            </div>
+          </div>
+
+          <div className="diagram-center-circle-wrapper">
+            <div className="outer-radar-ring">
+              <span className="dot dot-1"></span>
+              <span className="dot dot-2"></span>
+              <span className="dot dot-3"></span>
+              <span className="dot dot-4"></span>
+              <span className="dot dot-5"></span>
+              <span className="dot dot-6"></span>
+              <div className="inner-image-circle">
+                <img src="https://images.unsplash.com/photo-1449034446853-66c86144b0ad?auto=format&fit=crop&w=800&q=80" alt="Core Trailer House Product" />
+              </div>
+            </div>
+          </div>
+
+          <div className="diagram-right-col">
+            <div className="feature-item-desc">
+              <h4>Quick Assembly</h4>
+              <p>Advantage: Advantage: Easy Disassembly</p>
+              <p>Benefit: Easy Installation</p>
+            </div>
+            <div className="feature-item-desc">
+              <h4>Friendly Materials</h4>
+              <p>Advantage: Recyclable Resources</p>
+              <p>Benefit: Energy Conservation</p>
+            </div>
+            <div className="feature-item-desc">
+              <h4>Stable Structure</h4>
+              <p>Advantage: Good Fire Resistance</p>
+              <p>Benefit: Safe And Reliable</p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* CATEGORIES SECTION */}
-      <section className="categories-section curve-top-bottom-large">
-        <div className="categories-overlay">
-          <div className="categories-left">
-            <h2 className="section-title-large text-white">
-              Project <br />
-              <span className="italic-title">Categories</span>
-            </h2>
+      {/* NEW SECTION 6: OUR BEST TEAM */}
+      <section className="team-section">
+        <div className="team-header-block">
+          <h2 className="section-title">Our Best <i>Team</i></h2>
+        </div>
+
+        <div className="team-showcase-grid">
+          <div className="team-left-group">
+            <div className="team-card-wrapper">
+              <div className="team-image-box"><img src={TEAM_MEMBERS[0].img} alt={TEAM_MEMBERS[0].name} /></div>
+              <h4>{TEAM_MEMBERS[0].name}</h4>
+              <p>{TEAM_MEMBERS[0].role}</p>
+            </div>
+            <div className="team-card-wrapper">
+              <div className="team-image-box"><img src={TEAM_MEMBERS[1].img} alt={TEAM_MEMBERS[1].name} /></div>
+              <h4>{TEAM_MEMBERS[1].name}</h4>
+              <p>{TEAM_MEMBERS[1].role}</p>
+            </div>
+            <div className="team-join-cta-box">
+              <p>Become a part of a dynamic, forward-thinking team where creativity meets purpose. At our company, we value innovation.</p>
+              <a href="#join" className="join-team-link">Join Our Team</a>
+            </div>
           </div>
-          <div className="categories-right">
-            <ul className="category-list">
-              <li>• Interior design</li>
-              <li>• Commercial architect</li>
-              <li>• Landscape architect</li>
-              <li>• Civic project</li>
-            </ul>
-            <button className="btn-pill-cta transparent-btn">
-              Contact us <span className="arrow-circle">➔</span>
-            </button>
+
+          <div className="team-right-group">
+            <div className="team-pitch-paragraph">
+              <p>Join us and contribute to exciting projects that make a real impact. Together, we build more than just careers—we build a future.</p>
+            </div>
+            <div className="team-cards-row">
+              {TEAM_MEMBERS.slice(2).map(member => (
+                <div className="team-card-wrapper small-card" key={member.id}>
+                  <div className="team-image-box">
+                    <img src={member.img} alt={member.name} />
+                    <div className="team-social-hover">
+                      <span>f</span><span>𝕏</span><span>in</span>
+                    </div>
+                  </div>
+                  <h4>{member.name}</h4>
+                  <p>{member.role}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* CASE STUDIES SECTION */}
-      <section className="case-studies-section">
-        <div className="section-marker"><span className="dot-red"></span> Recent case studies</div>
-        
-        <div className="case-study-item">
-          <div className="case-text">
-            <h3>Fulham Town Hall extension</h3>
-            <p>Improvement on the floor plan and layout of a loft apartment in Paris to maximise the use of space and additional.</p>
-            <button className="btn-view-more">View more <span>➔</span></button>
-          </div>
-          <div className="case-img curve-top-bottom">
-            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=80" alt="Fulham Town Hall" />
-          </div>
-        </div>
-
-        <div className="case-study-item">
-          <div className="case-text">
-            <h3>The White Apartment</h3>
-            <p>Redefining Urban Elegance: Bridging Heritage and Modern Living in an Iconic Residential Landmark.</p>
-            <button className="btn-view-more">View more <span>➔</span></button>
-          </div>
-          <div className="case-img curve-top-bottom">
-            <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=600&q=80" alt="The White Apartment" />
+      {/* NEW SECTION 7: TESTIMONIALS SLIDER SECTION */}
+      <section className="testimonials-section">
+        <div className="testimonial-split-layout">
+          <div className="testimonial-bg-visual" style={{ backgroundImage: `url('https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1200&q=80')` }}></div>
+          <div className="testimonial-text-panel">
+            <span className="author-signature">Leonardo Enzo, Envato</span>
+            <div className="star-ratings-row">★★★★★</div>
+            <blockquote className="quote-body">
+              “Working with <i>infinity</i> was transformative. They took our vague ideas and turned them into a beautifully functional space. <i>Their creativity, attention to detail, and seamless communication made the process stress-free!</i>”
+            </blockquote>
+            <button className="testimonial-next-btn">Next <span>➔</span></button>
           </div>
         </div>
       </section>
+
+      {/* NEW SECTION 8: BEST HOUSE LAYOUT BLUEPRINTS */}
+      <section className="house-layout-section">
+        <div className="layout-center-heading">
+          <h2 className="section-title">Best House <i>Layout</i></h2>
+        </div>
+        <div className="layout-blueprint-grid">
+          <div className="blueprint-blueprint-display">
+            {/* Architectural Grid Background Simulated */}
+            <div className="architect-blueprint-lines">
+              <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1000&q=80" alt="Technical Layout Plan View" className="blueprint-main-plan" />
+            </div>
+          </div>
+          <div className="blueprint-specifications-list">
+            <div className="spec-table-row"><span>TOTAL AREA</span><strong>484 m²</strong></div>
+            <div className="spec-table-row"><span>FLOORS</span><strong>2</strong></div>
+            <div className="spec-table-row"><span>BEDROOMS</span><strong>3</strong></div>
+            <div className="spec-table-row"><span>BATHROOMS</span><strong>4</strong></div>
+            <div className="spec-table-row"><span>CEILING HEIGHT</span><strong>3 m</strong></div>
+            <div className="spec-table-row highlight-price"><span>TOTAL PRICE</span><strong>$ 4 685 000</strong></div>
+          </div>
+        </div>
+      </section>
+
+      {/* NEW SECTION 9: LATEST NEWS & BLOGS */}
+      <section className="news-blogs-section">
+        <div className="news-header-row">
+          <h2 className="section-title">Latest News <i>& Blogs</i></h2>
+          <button className="btn-outline-view">VIEW ALL <span>➔</span></button>
+        </div>
+        <div className="blogs-modular-grid">
+          {BLOGS.map(blog => (
+            <article key={blog.id} className={`blog-card-item ${blog.isLarge ? 'featured-large' : 'regular-stacked'}`}>
+              <div className="blog-img-frame">
+                <img src={blog.img} alt={blog.title} />
+              </div>
+              <div className="blog-item-meta">
+                <time>{blog.date}</time>
+                <h3>{blog.title}</h3>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* NEW SECTION 10: BRAND LOGOS TRUST TRUST BANNER */}
+      <div className="brand-logos-trust-banner">
+        <span className="banner-top-metric">Our Website 75000+ VIP Customer</span>
+        <div className="logos-flex-track">
+          <div className="logo-item">⬡ MODERN <small>ARCHITECTURE</small></div>
+          <div className="logo-item">✍ Ernie B <small>INTERIORS</small></div>
+          <div className="logo-item">⌂ ARCHITECT <small>DESIGN BUILD</small></div>
+          <div className="logo-item">DÆOR <small>INTERIORS</small></div>
+          <div className="logo-item">THE SPACE <small>GACTUR</small></div>
+        </div>
+      </div>
+
+    
+
     </div>
   );
 };
