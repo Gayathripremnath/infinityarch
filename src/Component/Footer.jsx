@@ -60,7 +60,7 @@ const Footer = () => {
         </div>
 
         <div className="footer-copyright-bottom-strip">
-          <p>© 1995-2025 All rights for <u>infinity</u> exclusive</p>
+          <p>©2026 Genova technologies All rights reserved</p>
         </div>
       </footer>
   );
