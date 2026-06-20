@@ -162,7 +162,7 @@
 }
 
 /* --- SECTION 2: ABOUT CONTENT --- */
-.about-section { padding: 24px 6% 18px; background: #fff; }
+.about-section { padding: 56px 6% 46px; background: #fff; }
 .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: center; }
 .about-visual-box { position: relative; }
 .dotted-bg-pattern {
@@ -188,15 +188,7 @@
   font-family: var(--font-sans);
   overflow: hidden;
   position: relative;
-}
-
-/* Header Row Layout */
-.section-header-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 22px;
-  width: 100%;
+  padding: 56px 6% 48px;
 }
 
 .section-title {
@@ -462,7 +454,7 @@
    ========================================================================== */
 
 .services-section {
-  padding: 88px 7% 66px;
+  padding: 58px 7% 56px;
   background: #f0fcd6e1 !important;
   font-family: 'Sora',sans-serif;
 }
@@ -662,7 +654,7 @@
   }
 }
 /* --- NEW SECTION 5: FEATURES & ADVANTAGES RADAR --- */
-.features-diagram-section { padding: 18px 6% 22px; background: #fff; text-align: center; }
+.features-diagram-section { padding: 56px 6% 52px; background: #fff; text-align: center; }
 .features-heading-box h2 { font-size: 3.4rem; font-weight: 300; margin-bottom: 12px; color: #111; }
 .features-heading-box h3 { font-size: 3rem; font-weight: 400; color: #111; margin-top: 0; letter-spacing: -0.03em; }
 .features-heading-box i { font-family: var(--font-serif); font-style: italic; }
@@ -693,7 +685,7 @@
 .dot-6 { bottom: 12%; right: 20%; }
 
 /* --- NEW SECTION 6: OUR BEST TEAM OVERVIEW --- */
-.team-section { padding: 18px 6% 22px; background: #fff; border-top: 1px solid #f3f4f6; }
+.team-section { padding: 56px 6% 52px; background: #fff; border-top: 1px solid #f3f4f6; }
 .team-header-block { margin-bottom: 24px; }
 .team-showcase-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; }
 
