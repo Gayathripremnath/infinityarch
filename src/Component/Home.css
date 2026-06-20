@@ -692,9 +692,18 @@
 .team-left-group { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
 .team-card-wrapper { text-align: left; }
 .team-image-box { position: relative; width: 100%; aspect-ratio: 0.85; background: #f3f4f6; overflow: hidden; margin-bottom: 15px; }
-.team-image-box img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1); transition: var(--transition-premium); }
 .team-card-wrapper h4 { font-size: 1.15rem; font-weight: 600; margin: 0 0 5px 0; color: #111; }
 .team-card-wrapper p { margin: 0; font-size: 0.85rem; color: #6b7280; }
+
+.team-avatar-box {
+  display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(180deg, #f9fafb 0%, #eef2f7 100%);
+  border: 1px solid #e5e7eb;
+}
+.team-user-icon {
+  width: 180px; height: 180px;
+  fill: #000000;
+}
 
 .team-join-cta-box { grid-column: span 2; padding-top: 30px; border-top: 1px dashed #e5e7eb; }
 .team-join-cta-box p { color: #6b7280; font-size: 0.95rem; max-width: 500px; margin-bottom: 20px; line-height: 1.6; }
@@ -704,13 +713,6 @@
 .team-pitch-paragraph p { color: #6b7280; font-size: 1rem; line-height: 1.7; max-width: 440px; margin-top: 0; }
 .team-cards-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .team-card-wrapper.small-card .team-image-box { aspect-ratio: 0.8; }
-.team-card-wrapper:hover img { filter: grayscale(0); }
-
-.team-social-hover {
-  position: absolute; bottom: 0; left: 0; width: 100%; background: #fff; padding: 10px; display: flex; justify-content: center; gap: 15px; transform: translateY(100%); transition: var(--transition-premium);
-}
-.team-image-box:hover .team-social-hover { transform: translateY(0); }
-.team-social-hover span { font-size: 0.8rem; color: #111; cursor: pointer; }
 
 /* --- NEW SECTION 7: TESTIMONIAL DISPLAY PANEL --- */
 .testimonials-section { background: var(--bg-dark-canvas) !important; }

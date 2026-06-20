@@ -10,8 +10,11 @@
   justify-content: space-between;
   align-items: center;
   padding: 30px 50px;
+  height: 100px;
   z-index: 10;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.686) 63%, rgba(255, 255, 255, 0) 100%);
+  /* background-color: #ffffffc2; */
+  /* background-color: #111111bd; */
   box-sizing: border-box;
 }
 
@@ -28,9 +31,9 @@
 }
 
 .logo-img {
-  height: 65px;
-  width: 109px;
-  object-fit: contain;
+  height: 79px;
+  width: 149px;
+  /* object-fit: cover; */
 }
 
 .logo-text {
@@ -38,13 +41,7 @@
   flex-direction: column;
 }
 
-.brand-name {
-  font-family: var(--font-sans), sans-serif;
-  font-weight: 700;
-  font-size: 1.2rem;
-  letter-spacing: 2px;
-  color: var(--text-light, #ffffff);
-}
+
 
 .brand-sub {
   font-size: 0.7rem;
@@ -56,7 +53,7 @@
 .menu-toggle {
   background: none;
   border: none;
-  color: var(--text-light, #ffffff);
+  color: #000000;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -88,13 +85,13 @@
 .nav-links {
   display: flex;
   list-style: none;
-  gap: 35px;
+  gap: 35px;  
   margin: 0;
   padding: 0;
 }
 
 .nav-links a {
-  color: var(--text-light, #ffffff);
+  color: #000000 !important;
   text-decoration: none;
   font-size: 0.95rem;
   font-weight: 500;
@@ -108,11 +105,11 @@
 }
 
 .nav-links a:hover {
-  color: var(--primary-red, #ff2a2a);
+  color: var(--primary-red, #ff2a2a) !important;
 }
 
 .nav-phone {
-  color: var(--text-light, #ffffff);
+  color: #000000;
   text-decoration: none;
   font-weight: 500;
   font-size: 0.95rem;

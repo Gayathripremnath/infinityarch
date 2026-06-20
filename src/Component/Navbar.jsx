@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Navbar.css';
-import logo from '../assets/logo.png'; // Assuming you have a logo image in the assets folder
+import logo from '../assets/Logoinfinity.png'; // Assuming you have a logo image in the assets folder
 
 const Navbar = () => {
   // Controlled state for opening/closing the sidebar drawer

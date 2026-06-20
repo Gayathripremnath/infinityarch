@@ -20,11 +20,11 @@ const PROJECTS = [
 
 
 const TEAM_MEMBERS = [
-  { id: 1, name: 'Phoenix Blaze', role: 'Copywriter', img: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=500&q=80' },
-  { id: 2, name: 'Julian Vance', role: 'Lead Architect', img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=500&q=80' },
-  { id: 3, name: 'Amara Sterling', role: 'Interior Stylist', img: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=500&q=80' },
-  { id: 4, name: 'Silas Kincaid', role: 'Structural Engineer', img: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=500&q=80' },
-  { id: 5, name: 'Elena Rostova', role: 'Project Manager', img: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=500&q=80' }
+  { id: 1, name: 'Phoenix Blaze', role: 'Copywriter' },
+  { id: 2, name: 'Julian Vance', role: 'Lead Architect' },
+  { id: 3, name: 'Amara Sterling', role: 'Interior Stylist' },
+  { id: 4, name: 'Silas Kincaid', role: 'Structural Engineer' },
+  { id: 5, name: 'Elena Rostova', role: 'Project Manager' }
 ];
 
 const BLOGS = [
@@ -51,7 +51,7 @@ const Home = () => {
     if (!slider) return;
 
     const updateTracker = () => {
-      const maxScroll = slider.scrollWidth - slider.clientWidth;
+      const maxScroll = slider.scrollWidth - slider.clientWidth;  
       if (maxScroll <= 0) {
         setProjectTrackerStyle({ width: '100%', left: '0%' });
         return;
@@ -137,7 +137,6 @@ const Home = () => {
 
         <div className="hero-bottom-bar">
           <div className="cta-button-group">
-            <button className="btn-order">Order Now</button>
             <a href="mailto:hello@infinity.com" className="btn-email-link">hello@infinity.com</a>
           </div>
 
@@ -274,6 +273,7 @@ const Home = () => {
             <div className="service-pill-group">
               <span className="pill">Design</span>
               <span className="pill">Planning</span>
+                <span className="pill">Construction</span>
             </div>
           </div>
 
@@ -370,12 +370,20 @@ const Home = () => {
         <div className="team-showcase-grid">
           <div className="team-left-group">
             <div className="team-card-wrapper">
-              <div className="team-image-box"><img src={TEAM_MEMBERS[0].img} alt={TEAM_MEMBERS[0].name} /></div>
+              <div className="team-image-box team-avatar-box" aria-hidden="true">
+                <svg viewBox="0 0 24 24" className="team-user-icon">
+                  <path d="M12 12c2.7 0 4.9-2.2 4.9-4.9S14.7 2.2 12 2.2 7.1 4.4 7.1 7.1 9.3 12 12 12zm0 2.3c-3.3 0-9.8 1.7-9.8 5v1.2h19.6v-1.2c0-3.3-6.5-5-9.8-5z" />
+                </svg>
+              </div>
               <h4>{TEAM_MEMBERS[0].name}</h4>
               <p>{TEAM_MEMBERS[0].role}</p>
             </div>
             <div className="team-card-wrapper">
-              <div className="team-image-box"><img src={TEAM_MEMBERS[1].img} alt={TEAM_MEMBERS[1].name} /></div>
+              <div className="team-image-box team-avatar-box" aria-hidden="true">
+                <svg viewBox="0 0 24 24" className="team-user-icon">
+                  <path d="M12 12c2.7 0 4.9-2.2 4.9-4.9S14.7 2.2 12 2.2 7.1 4.4 7.1 7.1 9.3 12 12 12zm0 2.3c-3.3 0-9.8 1.7-9.8 5v1.2h19.6v-1.2c0-3.3-6.5-5-9.8-5z" />
+                </svg>
+              </div>
               <h4>{TEAM_MEMBERS[1].name}</h4>
               <p>{TEAM_MEMBERS[1].role}</p>
             </div>
@@ -392,11 +400,10 @@ const Home = () => {
             <div className="team-cards-row">
               {TEAM_MEMBERS.slice(2).map(member => (
                 <div className="team-card-wrapper small-card" key={member.id}>
-                  <div className="team-image-box">
-                    <img src={member.img} alt={member.name} />
-                    <div className="team-social-hover">
-                      <span>f</span><span>𝕏</span><span>in</span>
-                    </div>
+                  <div className="team-image-box team-avatar-box" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" className="team-user-icon">
+                      <path d="M12 12c2.7 0 4.9-2.2 4.9-4.9S14.7 2.2 12 2.2 7.1 4.4 7.1 7.1 9.3 12 12 12zm0 2.3c-3.3 0-9.8 1.7-9.8 5v1.2h19.6v-1.2c0-3.3-6.5-5-9.8-5z" />
+                    </svg>
                   </div>
                   <h4>{member.name}</h4>
                   <p>{member.role}</p>
