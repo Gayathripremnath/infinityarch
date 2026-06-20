@@ -10,12 +10,12 @@ const CAROUSEL_DATA = [
 ];
 
 const PROJECTS = [
-  { id: 1, title: "Blending futuristic building", tag: "Architecture / 2025", img: "https://plus.unsplash.com/premium_photo-1731185355854-ab61c7698af0?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTN8fEJsZW5kaW5nJTIwZnV0dXJpc3RpYyUyMGJ1aWxkaW5nfGVufDB8fDB8fHww" },
-  { id: 2, title: "Modern Wood Pavilion", tag: "Design / 2024", img: "https://images.unsplash.com/photo-1647885352042-fe88980ccb2d?&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzV8fE1vZGVybiUyMFdvb2QlMjBQYXZpbGlvbnxlbnwwfHwwfHx8MA%3D%3D" },
-  { id: 3, title: "Eco-Friendly Retreat", tag: "Architecture / 2025", img: "https://images.unsplash.com/photo-1774597998353-2b8be5199a01?&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fEVjby1GcmllbmRseSUyMFJldHJlYXQlMjBob21lfGVufDB8fDB8fHww" },
-  { id: 4, title: "Minimalist Studio", tag: "Interior / 2024", img: "https://images.unsplash.com/photo-1607570799395-b968ad047e3f?&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzF8fE1pbmltYWxpc3QlMjBTdHVkaW98ZW58MHx8MHx8fDA%3D" },
-  { id: 5, title: "Urban Glass House", tag: "Architecture / 2026", img: "https://plus.unsplash.com/premium_photo-1686316979471-58ca82244594?&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8VXJiYW4lMjBHbGFzcyUyMEhvdXNlfGVufDB8fDB8fHww" },
-  { id: 6, title: "Scandinavian Villa", tag: "Residential / 2025", img: "https://images.unsplash.com/photo-1634147590662-4f140cfa572d?&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8U2NhbmRpbmF2aWFuJTIwVmlsbGF8ZW58MHx8MHx8fDA%3D" }
+  { id: 1, title: "building", tag: "Architecture / 2025", img: "https://plus.unsplash.com/premium_photo-1731185355854-ab61c7698af0?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTN8fEJsZW5kaW5nJTIwZnV0dXJpc3RpYyUyMGJ1aWxkaW5nfGVufDB8fDB8fHww" },
+  { id: 2, title: "Modern Wood house", tag: "Design / 2024", img: "https://images.unsplash.com/photo-1647885352042-fe88980ccb2d?&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzV8fE1vZGVybiUyMFdvb2QlMjBQYXZpbGlvbnxlbnwwfHwwfHx8MA%3D%3D" },
+  { id: 3, title: "Eco-Friendly ", tag: "Architecture / 2025", img: "https://images.unsplash.com/photo-1774597998353-2b8be5199a01?&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fEVjby1GcmllbmRseSUyMFJldHJlYXQlMjBob21lfGVufDB8fDB8fHww" },
+  { id: 4, title: " Studio", tag: "Interior / 2024", img: "https://images.unsplash.com/photo-1607570799395-b968ad047e3f?&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzF8fE1pbmltYWxpc3QlMjBTdHVkaW98ZW58MHx8MHx8fDA%3D" },
+  { id: 5, title: " Glass House", tag: "Architecture / 2026", img: "https://plus.unsplash.com/premium_photo-1686316979471-58ca82244594?&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8VXJiYW4lMjBHbGFzcyUyMEhvdXNlfGVufDB8fDB8fHww" },
+  { id: 6, title: " Villa", tag: "Residential / 2025", img: "https://images.unsplash.com/photo-1634147590662-4f140cfa572d?&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8U2NhbmRpbmF2aWFuJTIwVmlsbGF8ZW58MHx8MHx8fDA%3D" }
 ];
 
 
@@ -191,6 +191,7 @@ const Home = () => {
             </p>
             <p className="description-p small-note">
               We create smart, comfortable spaces that combine modern design with practical living for every lifestyle.
+              A portable house is a compact, movable living solution designed for flexibility, efficiency, and sustainability. These homes can be easily transported and set up in various locations, making them ideal for travelers, remote workers, or those seeking a minimalist lifestyle. Built with lightweight yet durable materials.
             </p>
           </div>
         </div>
@@ -237,49 +238,59 @@ const Home = () => {
       <section className="services-section">
         <div className="services-center-heading">
           <h2 className="section-title">Our Best <i>Services</i></h2>
+          <p className="service-intro">We provide thoughtful, reliable solutions for every stage of your project.</p>
         </div>
 
         <div className="services-grid">
           <div className="service-card">
-            <div className="service-icon">📐</div>
+            <div className="service-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 7h16v10H4z" />
+                <path d="M7 7V5h10v2" />
+                <path d="M9 12h6" />
+                <path d="M9 15h4" />
+              </svg>
+            </div>
             <h3>Custom Design & Planning</h3>
-            <div className="service-pill-group">
-              <span className="pill">Design</span>
-              <span className="pill">Planning</span>
-            </div>
           </div>
 
           <div className="service-card">
-            <div className="service-icon">⌂</div>
+            <div className="service-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 11.5 12 5l9 6.5V20H3z" />
+                <path d="M9 20v-5h6v5" />
+                <path d="M12 12.5V9" />
+              </svg>
+            </div>
             <h3>Modular Home Construction</h3>
-            <div className="service-pill-group">
-              <span className="pill">Design</span>
-              <span className="pill">Planning</span>
-                <span className="pill">Construction</span>
-            </div>
           </div>
 
           <div className="service-card">
-            <div className="service-icon">🚚</div>
+            <div className="service-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 16h18" />
+                <path d="M5 16V7.5A2.5 2.5 0 0 1 7.5 5H16a2 2 0 0 1 2 2v9" />
+                <path d="M7 16v3h10v-3" />
+                <path d="M9 12h6" />
+              </svg>
+            </div>
             <h3>On-Site Delivery & Installation</h3>
-            <div className="service-pill-group">
-              <span className="pill">Design</span>
-              <span className="pill">Planning</span>
-            </div>
           </div>
 
           <div className="service-card">
-            <div className="service-icon">☀️</div>
-            <h3>Solar Power System Installation</h3>
-            <div className="service-pill-group">
-              <span className="pill">Design</span>
-              <span className="pill">Planning</span>
+            <div className="service-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 3 5 9v12h14V9z" />
+                <path d="M9 16c0-1.7 1.3-3 3-3s3 1.3 3 3" />
+                <path d="M12 9.5v3" />
+              </svg>
             </div>
+            <h3>Solar Power System Installation</h3>
           </div>
         </div>
 
         <div className="services-footer-banner">
-          <p>Cut the waste. Get the service you deserve. View All <a href="#services">Our Service</a></p>
+          <p><a href="#services">Our Service</a></p>
         </div>
       </section>
 

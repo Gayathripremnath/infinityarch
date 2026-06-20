@@ -41,7 +41,7 @@ const Navbar = () => {
         </div>
 
         <div className="nav-right">
-          <a href="tel:0255553618" className="nav-phone">(025)555-36-18</a>
+          <a href="tel:+9100000000" className="nav-phone">+9100000000</a>
         </div>
       </nav>
 
@@ -70,17 +70,17 @@ const Navbar = () => {
 
         {/* Sidebar Navigation Options */}
         <ul className="drawer-links">
-          <li><a href="#homes" onClick={() => setIsMenuOpen(false)}>HOMES <span className="chevron"></span></a></li>
-          <li><a href="#pages" onClick={() => setIsMenuOpen(false)}>PAGES <span className="chevron"></span></a></li>
-          <li><a href="#portfolio" onClick={() => setIsMenuOpen(false)}>PORTFOLIO <span className="chevron"></span></a></li>
-          <li><a href="#blogs" onClick={() => setIsMenuOpen(false)}>BLOGS <span className="chevron"></span></a></li>
+          <li><a href="#homes" onClick={() => setIsMenuOpen(false)}>HOMES </a></li>
+          <li><a href="#pages" onClick={() => setIsMenuOpen(false)}>PAGES </a></li>
+          <li><a href="#portfolio" onClick={() => setIsMenuOpen(false)}>PORTFOLIO </a></li>
+          <li><a href="#blogs" onClick={() => setIsMenuOpen(false)}>BLOGS </a></li>
         </ul>
 
         {/* Drawer Footer Stack (Contacts & Social Media Handles) */}
         <div className="drawer-footer">
           <div className="drawer-contact">
-            <a href="tel:0255553618" className="drawer-phone">(025)555-36-18</a>
-            <a href="mailto:hello@infinity.com" className="drawer-email">hello@infinity.com</a>
+            <a href="tel:+91000000000" className="drawer-phone">+910000000000</a>
+            <a href="mailto:hello@infinity.com" className="drawer-email">info@infinityarchitecture.com</a>
           </div>
           
           <div className="drawer-socials">

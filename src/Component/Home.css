@@ -1,5 +1,5 @@
 /* --- Global Overrides & Architecture Font Systems --- */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400;1,500;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400;1,500;1,600&family=Sora:wght@300;400;500;600;700&display=swap');
 
 :root {
   --bg-dark-canvas: #0b0c0e;
@@ -10,7 +10,7 @@
   --text-pure-white: #ffffff;
   --text-charcoal: #1c1d21;
   --text-muted-grey: #9da3ae;
-  --font-sans: 'Plus Jakarta Sans', sans-serif;
+  --font-sans: 'Sora', sans-serif;
   --font-serif: 'Playfair Display', serif;
   --transition-premium: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -174,18 +174,9 @@
 
 .about-text-content .section-title { font-size: 3.2rem; margin: 15px 0 25px 0; }
 .about-text-content .section-title i { font-family: var(--font-serif); font-style: italic; color: #111; }
-.est-tag { color: var(--accent-lime); font-weight: 600; letter-spacing: 2px; font-size: 0.85rem; }
 .description-p { color: #5e6573; line-height: 1.7; font-size: 0.95rem; margin-bottom: 40px; }
 
-.progress-metric-container { margin-bottom: 40px; }
-.metric-header { display: flex; justify-content: space-between; font-weight: 600; font-size: 0.9rem; margin-bottom: 8px; }
-.metric-name { color: var(--accent-lime); }
-.metric-track { width: 100%; height: 4px; background: #e5e7eb; border-radius: 2px; }
-.metric-fill { height: 100%; background: var(--accent-lime); border-radius: 2px; }
 
-.counter-row { display: flex; align-items: center; gap: 20px; }
-.huge-number { font-size: 5rem; font-weight: 700; color: #111; line-height: 1; }
-.counter-label { display: flex; flex-direction: column; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 1px; color: #6b7280; border-left: 1px solid #e5e7eb; padding-left: 20px; }
 
 
 /* ==========================================================================
@@ -193,9 +184,8 @@
    ========================================================================== */
 
 .projects-section {
-  padding: 22px 4% 28px;
   background-color: #ffffff;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-sans);
   overflow: hidden;
   position: relative;
 }
@@ -366,7 +356,7 @@
 }
 
 .project-card-title {
-  font-size: 2.1rem;
+  font-size: 1.4rem;
   font-weight: 500;
   line-height: 1.25;
   color: #111111; 
@@ -472,20 +462,20 @@
    ========================================================================== */
 
 .services-section {
-  padding: 22px 4% 28px;
-  background-color: #f9fbfd; /* Subtle off-white background */
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  padding: 88px 7% 66px;
+  background: #f0fcd6e1 !important;
+  font-family: 'Sora',sans-serif;
 }
 
 /* Center Heading styling */
 .services-center-heading {
   text-align: center;
-  margin-bottom: 22px;
+  margin-bottom: 36px;
 }
 
 .services-center-heading .section-title {
-  font-size: 2.5rem;
-  color: #1a202c; /* Deep slate gray */
+  font-size: 2.7rem;
+  color: #111111;
   font-weight: 700;
   letter-spacing: -0.5px;
   margin: 0;
@@ -493,98 +483,115 @@
 
 .services-center-heading .section-title i {
   font-style: italic;
-  color: #000000; /* Accent brand color (Change to your primary color) */
+  color: #000000;
   position: relative;
+}
+
+.service-intro {
+  margin: 10px auto 0;
+  max-width: 640px;
+  color: #6b7280;
+  font-size: 0.98rem;
+  line-height: 1.7;
 }
 
 /* Services Grid */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 30px;
-  max-width: 1200px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  max-width: 1240px;
   margin: 0 auto;
 }
 
 /* Service Card Container */
 .service-card {
   background: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 16px;
-  padding: 35px 25px;
-  text-align: center;
+  border: 1px solid #ececec;
+  border-radius: 18px;
+  padding: 22px 18px;
+  text-align: left;
   transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 24px rgba(17, 17, 17, 0.06);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 /* Hover Interactive Effects */
 .service-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-6px);
   border-color: #b51d1d;
-  box-shadow: 0 20px 25px -5px rgba(0, 70, 243, 0.1), 
-              0 10px 10px -5px rgba(0, 70, 243, 0.04);
+  box-shadow: 0 18px 32px rgba(181, 29, 29, 0.1);
 }
 
 /* Icon Box Design */
 .service-icon {
-  font-size: 2.2rem;
-  width: 70px;
-  height: 70px;
-  background-color: #f0f7ff;
-  border-radius: 50%;
+  width: 58px;
+  height: 58px;
+  background-color: #f5f5f5;
+  border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 20px;
-  transition: transform 0.3s ease;
+  margin-bottom: 14px;
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+  color: #111111;
+}
+
+.service-icon svg {
+  width: 26px;
+  height: 26px;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
 }
 
 .service-card:hover .service-icon {
-  transform: scale(1.1);
+  transform: scale(1.04);
   background-color: #a01111;
-  color: #ffffff; /* Dynamic text swap if icon supports it */
+  color: #ffffff;
 }
 
 /* Card Typography */
 .service-card h3 {
-  font-size: 1.25rem;
-  color: #2d3748;
-  font-weight: 600;
-  line-height: 1.4;
-  margin: 0 0 20px 0;
-  min-height: 56px; /* Keeps text across multiple cards uniform */
+  font-size: 1.05rem;
+  color: #1f2937;
+  font-weight: 700;
+  line-height: 1.35;
+  margin: 0;
+  min-height: 48px;
   display: flex;
   align-items: center;
-  justify-content: center;
 }
 
 /* Pills / Tags style wrapper */
 .service-pill-group {
   display: flex;
-  gap: 8px;
-  justify-content: center;
+  gap: 6px;
+  justify-content: flex-start;
   flex-wrap: wrap;
+  margin-top: auto;
 }
 
 .service-pill-group .pill {
   background-color: #f1f5f9;
   color: #64748b;
-  font-size: 0.75rem;
+  font-size: 0.68rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  padding: 4px 12px;
-  border-radius: 100px;
+  padding: 4px 9px;
+  border-radius: 999px;
   transition: background-color 0.2s, color 0.2s;
 }
 
 .service-card:hover .pill {
-  background-color: #e0f2fe;
-  color: #080808;
+  background-color: #f9e8e8;
+  color: #a01111;
 }
 
 /* Services Footer CTA Banner */
