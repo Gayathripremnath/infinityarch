@@ -3,8 +3,8 @@ import './Home.css';
 
 // --- Assets Data ---
 const CAROUSEL_DATA = [
-  { id: 1, mainBg: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1800&q=80', title: 'luxury scaling', italicTitle: 'anywhere', cardImg: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1800&q=80', cardLabel: 'Eco Luxury Modular Framework' },
-  { id: 2, mainBg: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1800&q=80', title: 'smart spatial', italicTitle: 'engineering', cardImg: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1800&q=80', cardLabel: 'Dynamic Off-Grid Structure' },
+  { id: 1, mainBg: 'https://media.houseandgarden.co.uk/photos/68777bdecc005cf2ffdcae29/master/w_2048%2Cc_limit/240320_Ravensdon093V1-production_digital.jpg', title: 'luxury scaling', italicTitle: 'anywhere', cardImg: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1800&q=80', cardLabel: 'Eco Luxury Modular Framework' },
+  { id: 2, mainBg: 'https://media.houseandgarden.co.uk/photos/689323c7366fae833c2e9534/master/w_2048%2Cc_limit/1-An-Artful-Life-studio-&-Patrick-William-Photography.jpg', title: 'smart spatial', italicTitle: 'engineering', cardImg: 'https://media.houseandgarden.co.uk/photos/689323c7366fae833c2e9534/master/w_2048%2Cc_limit/1-An-Artful-Life-studio-&-Patrick-William-Photography.jpg', cardLabel: 'Dynamic Off-Grid Structure' },
   { id: 3, mainBg: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=80', title: 'portable living', italicTitle: 'made easy', cardImg: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1800&q=80', cardLabel: 'Architecture Meets Innovation' },
   { id: 4, mainBg: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1800&q=80', title: 'minimalist design', italicTitle: 'redefined', cardImg: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=80', cardLabel: 'Future of Sustainable Living' },
 ];
@@ -137,7 +137,7 @@ const Home = () => {
 
         <div className="hero-bottom-bar">
           <div className="cta-button-group">
-            <a href="mailto:hello@infinity.com" className="btn-email-link">hello@infinity.com</a>
+            <a href="mailto:info@infinityarchit.com" className="btn-email-link">hello@infinity.com</a>
           </div>
 
           <div className="scroll-indicator">
@@ -149,9 +149,7 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="mail-me-text">
-            <span>I have two – </span><a href="#mail">MAIL ME</a>
-          </div>
+          
 
           <div className="nested-preview-slider" onClick={handleNextHero}>
             <div className="preview-image-wrapper">
@@ -182,34 +180,18 @@ const Home = () => {
           <div className="about-visual-box">
             <div className="dotted-bg-pattern"></div>
             <div className="circular-frame-mask">
-              <img src="https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=1000&q=80" alt="Smart Structural Framing" />
+              <img src="https://officebanao.com/wp-content/uploads/2023/12/modern-interior-open-office-workspace.webp" alt="Smart Structural Framing" />
             </div>
           </div>
 
           <div className="about-text-content">
-            <span className="est-tag">est.1995</span>
-            <h2 className="section-title">About Our <i>Smart Portable Homes</i></h2>
+            <h2 className="section-title">About US</h2>
             <p className="description-p">
               A portable house is a compact, movable living solution designed for flexibility, efficiency, and sustainability. These homes can be easily transported and set up in various locations, making them ideal for travelers, remote workers, or those seeking a minimalist lifestyle. Built with lightweight yet durable materials.
             </p>
-
-            <div className="progress-metric-container">
-              <div className="metric-header">
-                <span className="metric-name">Architect Design</span>
-                <span className="metric-percentage">65%</span>
-              </div>
-              <div className="metric-track">
-                <div className="metric-fill" style={{ width: '65%' }}></div>
-              </div>
-            </div>
-
-            <div className="counter-row">
-              <div className="huge-number">45</div>
-              <div className="counter-label">
-                <span>Architecture Work</span>
-                <span>Completed</span>
-              </div>
-            </div>
+            <p className="description-p small-note">
+              We create smart, comfortable spaces that combine modern design with practical living for every lifestyle.
+            </p>
           </div>
         </div>
       </section>
@@ -336,7 +318,7 @@ const Home = () => {
               <span className="dot dot-5"></span>
               <span className="dot dot-6"></span>
               <div className="inner-image-circle">
-                <img src="https://images.unsplash.com/photo-1449034446853-66c86144b0ad?auto=format&fit=crop&w=800&q=80" alt="Core Trailer House Product" />
+                <img src="https://media.houseandgarden.co.uk/photos/65b3b0b3bed1c228df2e7d4c/master/w_2048%2Cc_limit/Assure-Interiors-MMH_MasterBedroom2.jpeg" alt="Core Trailer House Product" />
               </div>
             </div>
           </div>
@@ -429,31 +411,10 @@ const Home = () => {
         </div>
       </section>
 
-      {/* NEW SECTION 8: BEST HOUSE LAYOUT BLUEPRINTS */}
-      <section className="house-layout-section">
-        <div className="layout-center-heading">
-          <h2 className="section-title">Best House <i>Layout</i></h2>
-        </div>
-        <div className="layout-blueprint-grid">
-          <div className="blueprint-blueprint-display">
-            {/* Architectural Grid Background Simulated */}
-            <div className="architect-blueprint-lines">
-              <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1000&q=80" alt="Technical Layout Plan View" className="blueprint-main-plan" />
-            </div>
-          </div>
-          <div className="blueprint-specifications-list">
-            <div className="spec-table-row"><span>TOTAL AREA</span><strong>484 m²</strong></div>
-            <div className="spec-table-row"><span>FLOORS</span><strong>2</strong></div>
-            <div className="spec-table-row"><span>BEDROOMS</span><strong>3</strong></div>
-            <div className="spec-table-row"><span>BATHROOMS</span><strong>4</strong></div>
-            <div className="spec-table-row"><span>CEILING HEIGHT</span><strong>3 m</strong></div>
-            <div className="spec-table-row highlight-price"><span>TOTAL PRICE</span><strong>$ 4 685 000</strong></div>
-          </div>
-        </div>
-      </section>
+   
 
       {/* NEW SECTION 9: LATEST NEWS & BLOGS */}
-      <section className="news-blogs-section">
+      {/* <section className="news-blogs-section">
         <div className="news-header-row">
           <h2 className="section-title">Latest News <i>& Blogs</i></h2>
           <button className="btn-outline-view">VIEW ALL <span>➔</span></button>
@@ -471,19 +432,9 @@ const Home = () => {
             </article>
           ))}
         </div>
-      </section>
+      </section> */}
 
-      {/* NEW SECTION 10: BRAND LOGOS TRUST TRUST BANNER */}
-      <div className="brand-logos-trust-banner">
-        <span className="banner-top-metric">Our Website 75000+ VIP Customer</span>
-        <div className="logos-flex-track">
-          <div className="logo-item">⬡ MODERN <small>ARCHITECTURE</small></div>
-          <div className="logo-item">✍ Ernie B <small>INTERIORS</small></div>
-          <div className="logo-item">⌂ ARCHITECT <small>DESIGN BUILD</small></div>
-          <div className="logo-item">DÆOR <small>INTERIORS</small></div>
-          <div className="logo-item">THE SPACE <small>GACTUR</small></div>
-        </div>
-      </div>
+     
 
     
 

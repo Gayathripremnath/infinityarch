@@ -162,7 +162,7 @@
 }
 
 /* --- SECTION 2: ABOUT CONTENT --- */
-.about-section { padding: 120px 6%; background: #fff; }
+.about-section { padding: 24px 6% 18px; background: #fff; }
 .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: center; }
 .about-visual-box { position: relative; }
 .dotted-bg-pattern {
@@ -193,7 +193,7 @@
    ========================================================================== */
 
 .projects-section {
-  padding: 80px 4%;
+  padding: 22px 4% 28px;
   background-color: #ffffff;
   font-family: 'Inter', sans-serif;
   overflow: hidden;
@@ -205,7 +205,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 45px;
+  margin-bottom: 22px;
   width: 100%;
 }
 
@@ -263,8 +263,9 @@
 
 /* Individual Project Card Structure */
 .project-card {
-  min-width: 410px;
-  width: 410px;
+  min-width: 300px;
+  width: 300px;
+  height: 330px;
   flex: 0 0 auto;
   cursor: pointer;
   position: relative;
@@ -273,7 +274,7 @@
 /* Main Visual Frame Container */
 .project-img-container {
   position: relative;
-  height: 540px;
+  height: 350px;
   width: 100%;
   overflow: hidden;
   border-radius: 4px;
@@ -326,8 +327,8 @@
 
 /* Architectural Olive Green Circle Button */
 .hover-circle-btn {
-  width: 60px;
-  height: 60px;
+  width: 30px;
+  height: 30px;
   background-color: #729c14; /* Exact green hue matched from video clip */
   border-radius: 50%;
   display: flex;
@@ -471,7 +472,7 @@
    ========================================================================== */
 
 .services-section {
-  padding: 80px 4%;
+  padding: 22px 4% 28px;
   background-color: #f9fbfd; /* Subtle off-white background */
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
@@ -479,7 +480,7 @@
 /* Center Heading styling */
 .services-center-heading {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 22px;
 }
 
 .services-center-heading .section-title {
@@ -654,12 +655,12 @@
   }
 }
 /* --- NEW SECTION 5: FEATURES & ADVANTAGES RADAR --- */
-.features-diagram-section { padding: 140px 6%; background: #fff; text-align: center; }
+.features-diagram-section { padding: 18px 6% 22px; background: #fff; text-align: center; }
 .features-heading-box h2 { font-size: 3.4rem; font-weight: 300; margin-bottom: 12px; color: #111; }
 .features-heading-box h3 { font-size: 3rem; font-weight: 400; color: #111; margin-top: 0; letter-spacing: -0.03em; }
 .features-heading-box i { font-family: var(--font-serif); font-style: italic; }
 
-.diagram-layout-container { display: grid; grid-template-columns: 1fr 420px 1fr; align-items: center; margin-top: 100px; gap: 80px; }
+.diagram-layout-container { display: grid; grid-template-columns: 1fr 420px 1fr; align-items: center; margin-top: 40px; gap: 80px; }
 .feature-item-desc { margin-bottom: 70px; text-align: left; }
 .feature-item-desc.align-right { text-align: right; }
 .feature-item-desc h4 { font-size: 1.5rem; font-weight: 700; margin-bottom: 14px; color: #111; }
@@ -685,8 +686,8 @@
 .dot-6 { bottom: 12%; right: 20%; }
 
 /* --- NEW SECTION 6: OUR BEST TEAM OVERVIEW --- */
-.team-section { padding: 120px 6%; background: #fff; border-top: 1px solid #f3f4f6; }
-.team-header-block { margin-bottom: 60px; }
+.team-section { padding: 18px 6% 22px; background: #fff; border-top: 1px solid #f3f4f6; }
+.team-header-block { margin-bottom: 24px; }
 .team-showcase-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; }
 
 .team-left-group { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
@@ -728,8 +729,8 @@
 }
 
 /* --- NEW SECTION 8: BLUEPRINT DESIGN PLAN --- */
-.house-layout-section { padding: 120px 6%; background: #fff; }
-.layout-center-heading { text-align: center; margin-bottom: 60px; }
+.house-layout-section { padding: 18px 6% 22px; background: #fff; }
+.layout-center-heading { text-align: center; margin-bottom: 24px; }
 .layout-blueprint-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 80px; align-items: center; }
 
 .blueprint-blueprint-display {
@@ -746,8 +747,8 @@
 .spec-table-row.highlight-price strong { color: var(--accent-lime); font-size: 1.2rem; }
 
 /* --- NEW SECTION 9: MAGAZINE BLOGS LAYER --- */
-.news-blogs-section { padding: 120px 6%; background: #fff; border-top: 1px solid #f3f4f6; }
-.news-header-row { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 60px; }
+.news-blogs-section { padding: 18px 6% 22px; background: #fff; border-top: 1px solid #f3f4f6; }
+.news-header-row { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 24px; }
 .blogs-modular-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; }
 
 .blog-card-item { display: flex; flex-direction: column; gap: 20px; cursor: pointer; }
