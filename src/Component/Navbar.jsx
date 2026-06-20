@@ -79,7 +79,7 @@ const Navbar = () => {
         {/* Drawer Footer Stack (Contacts & Social Media Handles) */}
         <div className="drawer-footer">
           <div className="drawer-contact">
-            <a href="tel:+91000000000" className="drawer-phone">+910000000000</a>
+            <a href="tel:+91000000" className="drawer-phone">+910000000</a>
             <a href="mailto:hello@infinity.com" className="drawer-email">info@infinityarchitecture.com</a>
           </div>
           

@@ -513,13 +513,12 @@
 
 /* Service Card Container */
 .service-card {
-  background: #ffffff;
   border: 1px solid #ececec;
   border-radius: 18px;
+  height: 180px;
   padding: 22px 18px;
   text-align: left;
   transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 10px 24px rgba(17, 17, 17, 0.06);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
