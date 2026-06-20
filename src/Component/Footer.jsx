@@ -38,12 +38,12 @@ const Footer = () => {
 
           <div className="footer-links-column-nav">
             <h5>Phone</h5>
-            <span className="static-text-val">(025)555-36-18</span>
+            <span className="static-text-val">+91 0000000</span>
           </div>
 
           <div className="footer-links-column-nav">
             <h5>Address</h5>
-            <span className="static-text-val">220 East Peterson D Charm NC 30217</span>
+            <span className="static-text-val">Kannur</span>
           </div>
 
           <div className="footer-embedded-wireframe-graphics">
