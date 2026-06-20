@@ -33,10 +33,10 @@ const Navbar = () => {
         {/* Center Links (Visible on desktop screen sizes) */}
         <div className="nav-center">
           <ul className="nav-links">
-            <li><a href="#homes">Homes </a></li>
-            <li><a href="#pages">Pages </a></li>
-            <li><a href="#portfolio">Portfolio </a></li>
-            <li><a href="#blogs">Blogs </a></li>
+            <li><a href="#homes">Home </a></li>
+            <li><a href="#pages">About </a></li>
+            <li><a href="#portfolio">Services </a></li>
+            <li><a href="#blogs">Contact</a></li>
           </ul>
         </div>
 
