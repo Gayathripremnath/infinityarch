@@ -244,46 +244,40 @@ const Home = () => {
         <div className="services-grid">
           <div className="service-card">
             <div className="service-icon">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M4 7h16v10H4z" />
-                <path d="M7 7V5h10v2" />
-                <path d="M9 12h6" />
-                <path d="M9 15h4" />
-              </svg>
+              <img
+                src="https://uicamp.smartinnovates.net/i/artevo-html/assets/img/icons/ser2-1.svg"
+                alt="Custom Design & Planning icon"
+              />
             </div>
             <h3>Custom Design & Planning</h3>
           </div>
 
           <div className="service-card">
             <div className="service-icon">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M3 11.5 12 5l9 6.5V20H3z" />
-                <path d="M9 20v-5h6v5" />
-                <path d="M12 12.5V9" />
-              </svg>
+              <img
+                src="https://uicamp.smartinnovates.net/i/artevo-html/assets/img/icons/ser2-2.svg"
+                alt="Modular Home Construction icon"
+              />
             </div>
             <h3>Modular Home Construction</h3>
           </div>
 
           <div className="service-card">
             <div className="service-icon">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M3 16h18" />
-                <path d="M5 16V7.5A2.5 2.5 0 0 1 7.5 5H16a2 2 0 0 1 2 2v9" />
-                <path d="M7 16v3h10v-3" />
-                <path d="M9 12h6" />
-              </svg>
+              <img
+                src="https://uicamp.smartinnovates.net/i/artevo-html/assets/img/icons/ser2-3.svg"
+                alt="On-Site Delivery & Installation icon"
+              />
             </div>
             <h3>On-Site Delivery & Installation</h3>
           </div>
 
           <div className="service-card">
             <div className="service-icon">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M12 3 5 9v12h14V9z" />
-                <path d="M9 16c0-1.7 1.3-3 3-3s3 1.3 3 3" />
-                <path d="M12 9.5v3" />
-              </svg>
+              <img
+                src="https://uicamp.smartinnovates.net/i/artevo-html/assets/img/icons/ser2-4.svg"
+                alt="Solar Power System Installation icon"
+              />
             </div>
             <h3>Solar Power System Installation</h3>
           </div>

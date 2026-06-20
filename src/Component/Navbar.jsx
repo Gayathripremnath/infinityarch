@@ -70,10 +70,10 @@ const Navbar = () => {
 
         {/* Sidebar Navigation Options */}
         <ul className="drawer-links">
-          <li><a href="#homes" onClick={() => setIsMenuOpen(false)}>HOMES </a></li>
-          <li><a href="#pages" onClick={() => setIsMenuOpen(false)}>PAGES </a></li>
-          <li><a href="#portfolio" onClick={() => setIsMenuOpen(false)}>PORTFOLIO </a></li>
-          <li><a href="#blogs" onClick={() => setIsMenuOpen(false)}>BLOGS </a></li>
+          <li><a href="#homes" onClick={() => setIsMenuOpen(false)}>HOME </a></li>
+          <li><a href="#pages" onClick={() => setIsMenuOpen(false)}>ABOUT </a></li>
+          <li><a href="#portfolio" onClick={() => setIsMenuOpen(false)}>SERVICES </a></li>
+          <li><a href="#blogs" onClick={() => setIsMenuOpen(false)}>CONTACT </a></li>
         </ul>
 
         {/* Drawer Footer Stack (Contacts & Social Media Handles) */}
