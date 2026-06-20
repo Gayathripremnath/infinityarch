@@ -3,10 +3,10 @@ import './Home.css';
 
 // --- Assets Data ---
 const CAROUSEL_DATA = [
-  { id: 1, mainBg: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=80', title: 'portable living', italicTitle: 'made easy', cardImg: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1800&q=80', cardLabel: 'Architecture Meets Innovation' },
-  { id: 2, mainBg: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1800&q=80', title: 'minimalist design', italicTitle: 'redefined', cardImg: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=80', cardLabel: 'Future of Sustainable Living' },
-  { id: 3, mainBg: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1800&q=80', title: 'luxury scaling', italicTitle: 'anywhere', cardImg: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1800&q=80', cardLabel: 'Eco Luxury Modular Framework' },
-  { id: 4, mainBg: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1800&q=80', title: 'smart spatial', italicTitle: 'engineering', cardImg: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1800&q=80', cardLabel: 'Dynamic Off-Grid Structure' }
+  { id: 1, mainBg: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1800&q=80', title: 'luxury scaling', italicTitle: 'anywhere', cardImg: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1800&q=80', cardLabel: 'Eco Luxury Modular Framework' },
+  { id: 2, mainBg: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1800&q=80', title: 'smart spatial', italicTitle: 'engineering', cardImg: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1800&q=80', cardLabel: 'Dynamic Off-Grid Structure' },
+  { id: 3, mainBg: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=80', title: 'portable living', italicTitle: 'made easy', cardImg: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1800&q=80', cardLabel: 'Architecture Meets Innovation' },
+  { id: 4, mainBg: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1800&q=80', title: 'minimalist design', italicTitle: 'redefined', cardImg: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=80', cardLabel: 'Future of Sustainable Living' },
 ];
 
 const PROJECTS = [
