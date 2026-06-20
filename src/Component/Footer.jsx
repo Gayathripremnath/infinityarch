@@ -50,7 +50,7 @@ const Footer = () => {
             <div className="get-in-touch-label-overlay">
               <span>(Let's contact for better result)</span>
               <h3>Get In Touch</h3>
-              <a href="mailto:hello@infinity.com">hello@infinity.com</a>
+              <a href="mailto:info@infinityarchitecture.com">info@infinityarchitecture.com</a>
             </div>
             <div className="blueprint-isometric-wire-box">
               {/* Perspective layout overlay placeholder mimicking wireframe drawing asset */}

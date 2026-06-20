@@ -188,7 +188,18 @@
   font-family: var(--font-sans);
   overflow: hidden;
   position: relative;
-  padding: 56px 6% 48px;
+  padding: 56px 0;
+  width: 100%;
+}
+
+.section-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 22px;
+  padding: 0 48px;
+  box-sizing: border-box;
 }
 
 .section-title {
@@ -234,7 +245,8 @@
   gap: 30px;
   overflow-x: auto;
   scroll-behavior: smooth;
-  padding: 10px 0 30px 0;
+  padding: 10px 48px 30px;
+  box-sizing: border-box;
   background-color: #ffffff;
   scrollbar-width: none; /* Hides native scrollbar on Firefox */
 }
@@ -366,6 +378,8 @@
   gap: 25px;
   margin-top: 40px;
   width: 100%;
+  padding: 0 48px;
+  box-sizing: border-box;
 }
 
 .ctrl-arrow {
@@ -469,6 +483,7 @@
   font-size: 2.7rem;
   color: #111111;
   font-weight: 700;
+  
   letter-spacing: -0.5px;
   margin: 0;
 }
@@ -552,7 +567,8 @@
 .service-card h3 {
   font-size: 1.05rem;
   color: #1f2937;
-  font-weight: 700;
+  font-family: 'Sora',sans-serif;
+  font-weight: 400;
   line-height: 1.35;
   margin: 0;
   min-height: 48px;

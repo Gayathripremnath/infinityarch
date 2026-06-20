@@ -5,8 +5,8 @@ import './Home.css';
 const CAROUSEL_DATA = [
   { id: 1, mainBg: 'https://media.houseandgarden.co.uk/photos/68777bdecc005cf2ffdcae29/master/w_2048%2Cc_limit/240320_Ravensdon093V1-production_digital.jpg', title: 'luxury scaling', italicTitle: 'anywhere', cardImg: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1800&q=80', cardLabel: 'Eco Luxury Modular Framework' },
   { id: 2, mainBg: 'https://media.houseandgarden.co.uk/photos/689323c7366fae833c2e9534/master/w_2048%2Cc_limit/1-An-Artful-Life-studio-&-Patrick-William-Photography.jpg', title: 'smart spatial', italicTitle: 'engineering', cardImg: 'https://media.houseandgarden.co.uk/photos/689323c7366fae833c2e9534/master/w_2048%2Cc_limit/1-An-Artful-Life-studio-&-Patrick-William-Photography.jpg', cardLabel: 'Dynamic Off-Grid Structure' },
-  { id: 3, mainBg: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=80', title: 'portable living', italicTitle: 'made easy', cardImg: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1800&q=80', cardLabel: 'Architecture Meets Innovation' },
-  { id: 4, mainBg: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1800&q=80', title: 'minimalist design', italicTitle: 'redefined', cardImg: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=80', cardLabel: 'Future of Sustainable Living' },
+  { id: 3, mainBg: 'https://images.unsplash.com/photo-1568605114967-8130f3a36994?&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGhvbWV8ZW58MHx8MHx8fDA%3D', title: 'portable living', italicTitle: 'made easy', cardImg: 'https://images.unsplash.com/photo-1568605114967-8130f3a36994?&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGhvbWV8ZW58MHx8MHx8fDA%3D', cardLabel: 'Architecture Meets Innovation' },
+  { id: 4, mainBg: 'https://images.unsplash.com/photo-1668911494481-1643ee3e1235?&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjAzfHxob21lfGVufDB8fDB8fHww', title: 'minimalist design', italicTitle: 'redefined', cardImg: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=80', cardLabel: 'Future of Sustainable Living' },
 ];
 
 const PROJECTS = [
@@ -137,7 +137,7 @@ const Home = () => {
 
         <div className="hero-bottom-bar">
           <div className="cta-button-group">
-            <a href="mailto:info@infinityarchit.com" className="btn-email-link">hello@infinity.com</a>
+            <a href="mailto:info@infinityarchitecture.com" className="btn-email-link">info@infinityarchitecture.com</a>
           </div>
 
           <div className="scroll-indicator">
